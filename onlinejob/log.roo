@@ -8,3 +8,64 @@ project --topLevelPackage es.uca.iw.onlinejob --projectName onlinejob --java 7 -
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-09 13:21:32
 jpa setup --database MYSQL --provider HIBERNATE
 entity jpa --class ~.domain.Empresa
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-12 16:24:26
+jpa setup --provider HIBERNATE --database MYSQL
+database properties list
+jpa setup --provider HIBERNATE --database MYSQL
+database properties list
+hint
+// [failed] database reverse engineer --schema onlinejobs
+// [failed] database reverse engineer --schema onlinejobs
+addon search jdbc
+download status
+download accept terms of use
+addon search jdbc
+addon install bundle --bundleSymbolicName TAB
+hint
+field string --fieldName firstName --sizeMin 3 --sizeMax 30 --class ~.domain.Empresa
+field string --fieldName nombre --sizeMax 30 --class ~.domain.Empresa
+field number --fieldName id --type java.lang.Int --notNull --Max 1 --class ~.domain.Empresa
+field string --fieldName cif --notNull --sizeMax 15 --class ~.domain.Empresa
+field number --fieldName n_trabajadores --type java.lang.int --notNull --Max 6 --class ~.domain.Empresa
+field string --fieldName email --notNull --sizeMax 15 --class ~.domain.Empresa
+field number --fieldName id_localizacion --type java.lang.int --notNull --Max 6 --class ~.domain.Empresa
+field string --fieldName actividad --notNull --sizeMax 15 --class ~.domain.Empresa
+field string --fieldName descripcion --notNull --sizeMax 15 --class ~.domain.Empresa
+entity jpa --class ~.domain.Localizacion
+field number --fieldName id --type java.lang.int --notNull --Max 6 --class ~.domain.Localizacion
+field number --fieldName id_empresa --type java.lang.int --notNull --Max 6 --class ~.domain.Localizacion
+field string --fieldName nombre --notNull --sizeMax 15 --class ~.domain.Localizacion
+field string --fieldName direccion --notNull --sizeMax 15 --class ~.domain.Localizacion
+field string --fieldName telefono --notNull --sizeMax 15 --class ~.domain.Localizacion
+field string --fieldName ciudad --notNull --sizeMax 15 --class ~.domain.Localizacion
+entity jpa --class ~.domain.demandante
+field number --fieldName id --type java.lang.int --notNull --Max 6 --class ~.domain.Demandante
+field string --fieldName nombre --notNull --sizeMax 50 --class ~.domain.Demandante
+field string --fieldName apellidos --notNull --sizeMax 50 --class ~.domain.Demandante
+field date --fieldName f_nacimiento --type java.util.Date --notNull --class ~.domain.Demandante
+field string --fieldName email --notNull --class ~.domain.Demandante
+field string --fieldName sexo --notNull --class ~.domain.Demandante
+field string --fieldName telefono --notNull --class ~.domain.Demandante
+field number --fieldName id_cv --type java.lang.int --notNull --Max 6 --class ~.domain.Demandante
+field string --fieldName ciudad --notNull --class ~.domain.Demandante
+field string --fieldName direccion --notNull --class ~.domain.Demandante
+entity jpa --class ~.domain.oferta
+field number --fieldName id --type java.lang.int --notNull --Max 6 --class ~.domain.Oferta
+field date --fieldName f_inicio --type java.util.Date --notNull --class ~.domain.Oferta
+field date --fieldName f_final --type java.util.Date --notNull --class ~.domain.Oferta
+field number --fieldName id_estadooferta --type java.lang.int --notNull --Max 6 --class ~.domain.Oferta
+field string --fieldName titulo --notNull --class ~.domain.Oferta
+field string --fieldName t_puesto --notNull --class ~.domain.Oferta
+field string --fieldName t_contrato --notNull --class ~.domain.Oferta
+field number --fieldName sueldo --type java.lang.int --class ~.domain.Oferta
+field date --fieldName f_inicio_contrato --type java.util.Date --notNull --class ~.domain.Oferta
+field number --fieldName n_vacantes --notNull --type java.lang.int --class ~.domain.Oferta
+field string --fieldName perfil --notNull --class ~.domain.Oferta
+field number --fieldName id_empresa --notNull --type java.lang.int --class ~.domain.Oferta
+field number --fieldName id_localizacion --notNull --type java.lang.int --class ~.domain.Oferta
+entity jpa --class ~.domain.estadooferta
+field number --fieldName id_localizacion --notNull --type java.lang.int --class ~.domain.estadooferta
+field number --fieldName id --notNull --type java.lang.int --class ~.domain.estadooferta
+field string --fieldName nombre --notNull --class ~.domain.Oferta
+field string --fieldName nombre --notNull --class ~.domain.estadooferta
+field string --fieldName descripcion --notNull --class ~.domain.estadooferta

@@ -2,18 +2,13 @@ package es.uca.iw.onlinejob.domain;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
-import javax.validation.constraints.Size;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord
-public class Empresa {
-
-    /**
-     */
-    @Size(max = 30)
-    private String nombre;
+public class Localizacion {
 
     /**
      */
@@ -23,34 +18,29 @@ public class Empresa {
     /**
      */
     @NotNull
-    @Size(max = 15)
-    private String cif;
-
-    /**
-     */
-    @NotNull
-    private int n_trabajadores;
+    private int id_empresa;
 
     /**
      */
     @NotNull
     @Size(max = 15)
-    private String email;
-
-    /**
-     */
-    @NotNull
-    private int id_localizacion;
+    private String nombre;
 
     /**
      */
     @NotNull
     @Size(max = 15)
-    private String actividad;
+    private String direccion;
 
     /**
      */
     @NotNull
     @Size(max = 15)
-    private String descripcion;
+    private String telefono;
+
+    /**
+     */
+    @NotNull
+    @Size(max = 15)
+    private String ciudad;
 }

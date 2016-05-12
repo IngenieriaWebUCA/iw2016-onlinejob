@@ -3,97 +3,97 @@
 
 package es.uca.iw.onlinejob.domain;
 
-import es.uca.iw.onlinejob.domain.Empresa;
+import es.uca.iw.onlinejob.domain.Demandante;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Empresa_Roo_Jpa_ActiveRecord {
+privileged aspect Demandante_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager Empresa.entityManager;
+    transient EntityManager Demandante.entityManager;
     
-    public static final List<String> Empresa.fieldNames4OrderClauseFilter = java.util.Arrays.asList("nombre", "id", "cif", "n_trabajadores", "email", "id_localizacion", "actividad", "descripcion");
+    public static final List<String> Demandante.fieldNames4OrderClauseFilter = java.util.Arrays.asList("id", "nombre", "apellidos", "f_nacimiento", "email", "sexo", "telefono", "id_cv", "ciudad", "direccion");
     
-    public static final EntityManager Empresa.entityManager() {
-        EntityManager em = new Empresa().entityManager;
+    public static final EntityManager Demandante.entityManager() {
+        EntityManager em = new Demandante().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long Empresa.countEmpresas() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Empresa o", Long.class).getSingleResult();
+    public static long Demandante.countDemandantes() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Demandante o", Long.class).getSingleResult();
     }
     
-    public static List<Empresa> Empresa.findAllEmpresas() {
-        return entityManager().createQuery("SELECT o FROM Empresa o", Empresa.class).getResultList();
+    public static List<Demandante> Demandante.findAllDemandantes() {
+        return entityManager().createQuery("SELECT o FROM Demandante o", Demandante.class).getResultList();
     }
     
-    public static List<Empresa> Empresa.findAllEmpresas(String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM Empresa o";
+    public static List<Demandante> Demandante.findAllDemandantes(String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM Demandante o";
         if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
             jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
             if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
                 jpaQuery = jpaQuery + " " + sortOrder;
             }
         }
-        return entityManager().createQuery(jpaQuery, Empresa.class).getResultList();
+        return entityManager().createQuery(jpaQuery, Demandante.class).getResultList();
     }
     
-    public static Empresa Empresa.findEmpresa(Long id_) {
+    public static Demandante Demandante.findDemandante(Long id_) {
         if (id_ == null) return null;
-        return entityManager().find(Empresa.class, id_);
+        return entityManager().find(Demandante.class, id_);
     }
     
-    public static List<Empresa> Empresa.findEmpresaEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Empresa o", Empresa.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<Demandante> Demandante.findDemandanteEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Demandante o", Demandante.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
-    public static List<Empresa> Empresa.findEmpresaEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM Empresa o";
+    public static List<Demandante> Demandante.findDemandanteEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM Demandante o";
         if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
             jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
             if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
                 jpaQuery = jpaQuery + " " + sortOrder;
             }
         }
-        return entityManager().createQuery(jpaQuery, Empresa.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+        return entityManager().createQuery(jpaQuery, Demandante.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional
-    public void Empresa.persist() {
+    public void Demandante.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void Empresa.remove() {
+    public void Demandante.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Empresa attached = Empresa.findEmpresa(this.id_);
+            Demandante attached = Demandante.findDemandante(this.id_);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void Empresa.flush() {
+    public void Demandante.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void Empresa.clear() {
+    public void Demandante.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public Empresa Empresa.merge() {
+    public Demandante Demandante.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        Empresa merged = this.entityManager.merge(this);
+        Demandante merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }

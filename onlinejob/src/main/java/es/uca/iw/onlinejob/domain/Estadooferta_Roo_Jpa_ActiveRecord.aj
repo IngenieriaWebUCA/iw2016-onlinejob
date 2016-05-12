@@ -3,97 +3,97 @@
 
 package es.uca.iw.onlinejob.domain;
 
-import es.uca.iw.onlinejob.domain.Empresa;
+import es.uca.iw.onlinejob.domain.Estadooferta;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Empresa_Roo_Jpa_ActiveRecord {
+privileged aspect Estadooferta_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager Empresa.entityManager;
+    transient EntityManager Estadooferta.entityManager;
     
-    public static final List<String> Empresa.fieldNames4OrderClauseFilter = java.util.Arrays.asList("nombre", "id", "cif", "n_trabajadores", "email", "id_localizacion", "actividad", "descripcion");
+    public static final List<String> Estadooferta.fieldNames4OrderClauseFilter = java.util.Arrays.asList("id", "nombre", "descripcion");
     
-    public static final EntityManager Empresa.entityManager() {
-        EntityManager em = new Empresa().entityManager;
+    public static final EntityManager Estadooferta.entityManager() {
+        EntityManager em = new Estadooferta().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long Empresa.countEmpresas() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Empresa o", Long.class).getSingleResult();
+    public static long Estadooferta.countEstadoofertas() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Estadooferta o", Long.class).getSingleResult();
     }
     
-    public static List<Empresa> Empresa.findAllEmpresas() {
-        return entityManager().createQuery("SELECT o FROM Empresa o", Empresa.class).getResultList();
+    public static List<Estadooferta> Estadooferta.findAllEstadoofertas() {
+        return entityManager().createQuery("SELECT o FROM Estadooferta o", Estadooferta.class).getResultList();
     }
     
-    public static List<Empresa> Empresa.findAllEmpresas(String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM Empresa o";
+    public static List<Estadooferta> Estadooferta.findAllEstadoofertas(String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM Estadooferta o";
         if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
             jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
             if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
                 jpaQuery = jpaQuery + " " + sortOrder;
             }
         }
-        return entityManager().createQuery(jpaQuery, Empresa.class).getResultList();
+        return entityManager().createQuery(jpaQuery, Estadooferta.class).getResultList();
     }
     
-    public static Empresa Empresa.findEmpresa(Long id_) {
+    public static Estadooferta Estadooferta.findEstadooferta(Long id_) {
         if (id_ == null) return null;
-        return entityManager().find(Empresa.class, id_);
+        return entityManager().find(Estadooferta.class, id_);
     }
     
-    public static List<Empresa> Empresa.findEmpresaEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Empresa o", Empresa.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<Estadooferta> Estadooferta.findEstadoofertaEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Estadooferta o", Estadooferta.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
-    public static List<Empresa> Empresa.findEmpresaEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM Empresa o";
+    public static List<Estadooferta> Estadooferta.findEstadoofertaEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM Estadooferta o";
         if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
             jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
             if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
                 jpaQuery = jpaQuery + " " + sortOrder;
             }
         }
-        return entityManager().createQuery(jpaQuery, Empresa.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+        return entityManager().createQuery(jpaQuery, Estadooferta.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional
-    public void Empresa.persist() {
+    public void Estadooferta.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void Empresa.remove() {
+    public void Estadooferta.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Empresa attached = Empresa.findEmpresa(this.id_);
+            Estadooferta attached = Estadooferta.findEstadooferta(this.id_);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void Empresa.flush() {
+    public void Estadooferta.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void Empresa.clear() {
+    public void Estadooferta.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public Empresa Empresa.merge() {
+    public Estadooferta Estadooferta.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        Empresa merged = this.entityManager.merge(this);
+        Estadooferta merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }

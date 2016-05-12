@@ -3,7 +3,7 @@
 
 package es.uca.iw.onlinejob.domain;
 
-import es.uca.iw.onlinejob.domain.Empresa;
+import es.uca.iw.onlinejob.domain.Localizacion;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,32 +11,32 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Version;
 
-privileged aspect Empresa_Roo_Jpa_Entity {
+privileged aspect Localizacion_Roo_Jpa_Entity {
     
-    declare @type: Empresa: @Entity;
+    declare @type: Localizacion: @Entity;
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_")
-    private Long Empresa.id_;
+    private Long Localizacion.id_;
     
     @Version
     @Column(name = "version")
-    private Integer Empresa.version;
+    private Integer Localizacion.version;
     
-    public Long Empresa.getId_() {
+    public Long Localizacion.getId_() {
         return this.id_;
     }
     
-    public void Empresa.setId_(Long id) {
+    public void Localizacion.setId_(Long id) {
         this.id_ = id;
     }
     
-    public Integer Empresa.getVersion() {
+    public Integer Localizacion.getVersion() {
         return this.version;
     }
     
-    public void Empresa.setVersion(Integer version) {
+    public void Localizacion.setVersion(Integer version) {
         this.version = version;
     }
     
