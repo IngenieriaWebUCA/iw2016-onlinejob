@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_es_uca_iw_onlinejob_domain_Demandante" items="${demandantes}" z="ptCSgtSXQdJ75BLQNZ1G9zxdCY4=">
+        <table:table data="${demandantes}" id="l_es_uca_iw_onlinejob_domain_Demandante" path="/demandantes" typeIdFieldName="id_" z="wagZvRp2PytF3bEV7iKItmV/myQ=">
+            <table:column id="c_es_uca_iw_onlinejob_domain_Demandante_id" property="id" z="MNA8kLFKcwtXnVMLFx5zHe53ptg="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Demandante_nombre" property="nombre" z="eCmoxzxPwd4NQaJCN6Z2PIBiwPk="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Demandante_apellidos" property="apellidos" z="tGKaXHNkANOduXerfl4Bf3BbmPQ="/>
+            <table:column date="true" dateTimePattern="${demandante_f_nacimiento_date_format}" id="c_es_uca_iw_onlinejob_domain_Demandante_f_nacimiento" property="f_nacimiento" z="20+tUaAJSCVCspuQ5LBIU0NUj1o="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Demandante_email" property="email" z="QbJiQdci2iPvGNvaEbHOVjhUxhw="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Demandante_sexo" property="sexo" z="0Qg3wK1AWmDhDVAypvbK29/K15A="/>
+        </table:table>
+    </page:list>
+</div>

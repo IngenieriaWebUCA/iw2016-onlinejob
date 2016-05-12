@@ -69,3 +69,20 @@ field number --fieldName id --notNull --type java.lang.int --class ~.domain.esta
 field string --fieldName nombre --notNull --class ~.domain.Oferta
 field string --fieldName nombre --notNull --class ~.domain.estadooferta
 field string --fieldName descripcion --notNull --class ~.domain.estadooferta
+jpa setup --provider HIBERNATE --database HYPERSONIC_PERSISTENT
+web mvc setup
+web mvc all --package ~.web
+web mvc all --package ~.web
+web mvc scaffold --class ~.web.EmpresaListController --backingType ~.domain.Empresa --path empresalist
+web mvc finder all
+web mvc language --code es
+web mvc language --code en
+web mvc jquery setup
+web mvc jquery all
+web mvc jquery add --type ~.web.EmpresaController
+web mvc datatables setup
+web mvc bootstrap setup
+jpa gvnix setup
+jpa batch all
+web mvc batch setup
+web mvc batch all

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_es_uca_iw_onlinejob_domain_Localizacion" object="${localizacion}" path="/localizacions" z="NzmcDoR/cFm6ukr/1XE12E6WB/Y=">
+        <field:display field="id" id="s_es_uca_iw_onlinejob_domain_Localizacion_id" object="${localizacion}" z="MsvuhRGKUfcY/GTW+ruTUp5ytiI="/>
+        <field:display field="id_empresa" id="s_es_uca_iw_onlinejob_domain_Localizacion_id_empresa" object="${localizacion}" z="bwYVGksuF0j/YsWhOJDY23NGFcY="/>
+        <field:display field="nombre" id="s_es_uca_iw_onlinejob_domain_Localizacion_nombre" object="${localizacion}" z="OvwJDEBnBpVTzHv9QcSCZFn0uIs="/>
+        <field:display field="direccion" id="s_es_uca_iw_onlinejob_domain_Localizacion_direccion" object="${localizacion}" z="rYI8U83WwLHM9x2btfvY7akGqyM="/>
+        <field:display field="telefono" id="s_es_uca_iw_onlinejob_domain_Localizacion_telefono" object="${localizacion}" z="ibp50LGkysluMHIYWS0TIyrQ46s="/>
+        <field:display field="ciudad" id="s_es_uca_iw_onlinejob_domain_Localizacion_ciudad" object="${localizacion}" z="hEclMWyfAHNXHOGkp2/PQPXaUVg="/>
+    </page:show>
+</div>

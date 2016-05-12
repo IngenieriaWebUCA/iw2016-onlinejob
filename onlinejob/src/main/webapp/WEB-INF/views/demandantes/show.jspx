@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_es_uca_iw_onlinejob_domain_Demandante" object="${demandante}" path="/demandantes" z="hWBVNJE76z/YKyDnlr+vTSCyPns=">
+        <field:display field="id" id="s_es_uca_iw_onlinejob_domain_Demandante_id" object="${demandante}" z="CJJa0f2CsAIn2fCEJ8hxEPwyU1I="/>
+        <field:display field="nombre" id="s_es_uca_iw_onlinejob_domain_Demandante_nombre" object="${demandante}" z="Q+QYPRQokgYwt/zb2PY/CECDGOM="/>
+        <field:display field="apellidos" id="s_es_uca_iw_onlinejob_domain_Demandante_apellidos" object="${demandante}" z="3ZZxm44VXbfAVM/SMhaeE3YiaIc="/>
+        <field:display date="true" dateTimePattern="${demandante_f_nacimiento_date_format}" field="f_nacimiento" id="s_es_uca_iw_onlinejob_domain_Demandante_f_nacimiento" object="${demandante}" z="cwKSvzCxZaNh0F3pFnDQG4e78wg="/>
+        <field:display field="email" id="s_es_uca_iw_onlinejob_domain_Demandante_email" object="${demandante}" z="Feyk2sqeEXkV7yesWNFzQfhSVf8="/>
+        <field:display field="sexo" id="s_es_uca_iw_onlinejob_domain_Demandante_sexo" object="${demandante}" z="rOWsc/e6Gj8UnNXiXEi12u4JxEs="/>
+        <field:display field="telefono" id="s_es_uca_iw_onlinejob_domain_Demandante_telefono" object="${demandante}" z="ROnnCo8F64Aw3lyliPapFjY2NZg="/>
+        <field:display field="id_cv" id="s_es_uca_iw_onlinejob_domain_Demandante_id_cv" object="${demandante}" z="Q5k5MlX2+soMRyoeIkC6SuEBAY0="/>
+        <field:display field="ciudad" id="s_es_uca_iw_onlinejob_domain_Demandante_ciudad" object="${demandante}" z="Jq99rZ2PAjqP93zi3hXFJQGTN7o="/>
+        <field:display field="direccion" id="s_es_uca_iw_onlinejob_domain_Demandante_direccion" object="${demandante}" z="+U7re+P8wr2QpDPDGiLtXsQS+pM="/>
+    </page:show>
+</div>

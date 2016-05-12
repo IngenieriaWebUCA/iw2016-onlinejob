@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_es_uca_iw_onlinejob_domain_Oferta" idField="id_" modelAttribute="oferta" path="/ofertas" versionField="Version" z="TxdVj7Is0vR85/+tOTN7F9B4mOM=">
+        <field:input field="id" id="c_es_uca_iw_onlinejob_domain_Oferta_id" required="true" z="RZvbQPCODylSAcF673fYRctwoY4="/>
+        <field:datetime dateTimePattern="${oferta_f_inicio_date_format}" field="f_inicio" id="c_es_uca_iw_onlinejob_domain_Oferta_f_inicio" required="true" z="gMosbcorHj+h7Q+V7wUsHTp/0oc="/>
+        <field:datetime dateTimePattern="${oferta_f_final_date_format}" field="f_final" id="c_es_uca_iw_onlinejob_domain_Oferta_f_final" required="true" z="i7C45a7gHYu3WrWiT5sJc0vt4Ks="/>
+        <field:input field="id_estadooferta" id="c_es_uca_iw_onlinejob_domain_Oferta_id_estadooferta" required="true" z="5wLnhy93XsxBCixBtzLVI7yUdHg="/>
+        <field:input field="titulo" id="c_es_uca_iw_onlinejob_domain_Oferta_titulo" required="true" z="P23J6cXlx77acz01L7179xeoOqU="/>
+        <field:input field="t_puesto" id="c_es_uca_iw_onlinejob_domain_Oferta_t_puesto" required="true" z="PpAx8vkyk4dV5I0XhTojQDZrHfo="/>
+        <field:input field="t_contrato" id="c_es_uca_iw_onlinejob_domain_Oferta_t_contrato" required="true" z="dJy6If5BGwlhL0TFa6UXnAarDM8="/>
+        <field:input field="sueldo" id="c_es_uca_iw_onlinejob_domain_Oferta_sueldo" z="yXHjiOO8K+lB7+XQ+YuFGWc0dAQ="/>
+        <field:datetime dateTimePattern="${oferta_f_inicio_contrato_date_format}" field="f_inicio_contrato" id="c_es_uca_iw_onlinejob_domain_Oferta_f_inicio_contrato" required="true" z="2ufsveIXgLL41QIezehR2w3p3AQ="/>
+        <field:input field="n_vacantes" id="c_es_uca_iw_onlinejob_domain_Oferta_n_vacantes" required="true" z="lLPgy5V9rL21gJQjyQi+wnKXT1E="/>
+        <field:input field="perfil" id="c_es_uca_iw_onlinejob_domain_Oferta_perfil" required="true" z="e81MMEUynT2R1zRyJAsUVYJYd50="/>
+        <field:input field="id_empresa" id="c_es_uca_iw_onlinejob_domain_Oferta_id_empresa" required="true" z="nycxpuPFkpCtqJUb96zROEZsX5E="/>
+        <field:input field="id_localizacion" id="c_es_uca_iw_onlinejob_domain_Oferta_id_localizacion" required="true" z="Id4m/QR6cjhutdIe1vDhMGNZXUE="/>
+        <field:input field="nombre" id="c_es_uca_iw_onlinejob_domain_Oferta_nombre" required="true" z="GoP/9spd5EmcdRPe71WtjIS5xtw="/>
+    </form:update>
+</div>

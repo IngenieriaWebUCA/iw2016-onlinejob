@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_es_uca_iw_onlinejob_domain_Demandante" idField="id_" modelAttribute="demandante" path="/demandantes" versionField="Version" z="Hf87u1lTi91BR2VRDrGCQsCoicQ=">
+        <field:input field="id" id="c_es_uca_iw_onlinejob_domain_Demandante_id" required="true" z="iEdvUqJ6AtUAAKwKMU4W4ikbDU0="/>
+        <field:textarea field="nombre" id="c_es_uca_iw_onlinejob_domain_Demandante_nombre" required="true" z="EEbbzVCVad/iZcpG2Q9eZ9VYCMg="/>
+        <field:textarea field="apellidos" id="c_es_uca_iw_onlinejob_domain_Demandante_apellidos" required="true" z="RCZK8qiRDnUslggHStSkPe2cekY="/>
+        <field:datetime dateTimePattern="${demandante_f_nacimiento_date_format}" field="f_nacimiento" id="c_es_uca_iw_onlinejob_domain_Demandante_f_nacimiento" required="true" z="LrLvAVGimB7woSuJ8e5XpQDe5GQ="/>
+        <field:input field="email" id="c_es_uca_iw_onlinejob_domain_Demandante_email" required="true" validationMessageCode="field_invalid_email" z="tHyjw6vUnqzh86DDzjtubFVhdhg="/>
+        <field:input field="sexo" id="c_es_uca_iw_onlinejob_domain_Demandante_sexo" required="true" z="s9cwsnUSOkvSCqIbbeNOAKBfPDg="/>
+        <field:input field="telefono" id="c_es_uca_iw_onlinejob_domain_Demandante_telefono" required="true" z="ostl1qHdRUJOPpZuPq9zsSCp0G8="/>
+        <field:input field="id_cv" id="c_es_uca_iw_onlinejob_domain_Demandante_id_cv" required="true" z="Vs5oAU5+RyEVqUkxA+fDl0cpNw0="/>
+        <field:input field="ciudad" id="c_es_uca_iw_onlinejob_domain_Demandante_ciudad" required="true" z="QBw/KQ1+HGjTDDuHRjMUXAPEyME="/>
+        <field:input field="direccion" id="c_es_uca_iw_onlinejob_domain_Demandante_direccion" required="true" z="VG4FX7gMTLC2F6QiGxsWEtgofmc="/>
+    </form:update>
+</div>
