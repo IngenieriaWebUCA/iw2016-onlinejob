@@ -4,16 +4,20 @@
 package es.uca.iw.onlinejob.domain;
 
 import es.uca.iw.onlinejob.domain.Demandante;
+import es.uca.iw.onlinejob.domain.OfertaTrabajo;
+import es.uca.iw.onlinejob.domain.Perfil;
+import es.uca.iw.onlinejob.domain.Usuario;
+import es.uca.iw.onlinejob.reference.EstadoOferta;
 import java.util.Date;
 
 privileged aspect Demandante_Roo_JavaBean {
     
-    public int Demandante.getId() {
-        return this.id;
+    public String Demandante.getDni() {
+        return this.dni;
     }
     
-    public void Demandante.setId(int id) {
-        this.id = id;
+    public void Demandante.setDni(String dni) {
+        this.dni = dni;
     }
     
     public String Demandante.getNombre() {
@@ -24,28 +28,12 @@ privileged aspect Demandante_Roo_JavaBean {
         this.nombre = nombre;
     }
     
-    public String Demandante.getApellidos() {
-        return this.apellidos;
+    public Date Demandante.getFecha_nacimiento() {
+        return this.fecha_nacimiento;
     }
     
-    public void Demandante.setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-    
-    public Date Demandante.getF_nacimiento() {
-        return this.f_nacimiento;
-    }
-    
-    public void Demandante.setF_nacimiento(Date f_nacimiento) {
-        this.f_nacimiento = f_nacimiento;
-    }
-    
-    public String Demandante.getEmail() {
-        return this.email;
-    }
-    
-    public void Demandante.setEmail(String email) {
-        this.email = email;
+    public void Demandante.setFecha_nacimiento(Date fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
     }
     
     public String Demandante.getSexo() {
@@ -56,6 +44,22 @@ privileged aspect Demandante_Roo_JavaBean {
         this.sexo = sexo;
     }
     
+    public String Demandante.getDireccion() {
+        return this.direccion;
+    }
+    
+    public void Demandante.setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+    
+    public String Demandante.getEmail() {
+        return this.email;
+    }
+    
+    public void Demandante.setEmail(String email) {
+        this.email = email;
+    }
+    
     public String Demandante.getTelefono() {
         return this.telefono;
     }
@@ -64,28 +68,36 @@ privileged aspect Demandante_Roo_JavaBean {
         this.telefono = telefono;
     }
     
-    public int Demandante.getId_cv() {
-        return this.id_cv;
+    public EstadoOferta Demandante.getEstado() {
+        return this.estado;
     }
     
-    public void Demandante.setId_cv(int id_cv) {
-        this.id_cv = id_cv;
+    public void Demandante.setEstado(EstadoOferta estado) {
+        this.estado = estado;
     }
     
-    public String Demandante.getCiudad() {
-        return this.ciudad;
+    public OfertaTrabajo Demandante.getOfertademandante() {
+        return this.ofertademandante;
     }
     
-    public void Demandante.setCiudad(String ciudad) {
-        this.ciudad = ciudad;
+    public void Demandante.setOfertademandante(OfertaTrabajo ofertademandante) {
+        this.ofertademandante = ofertademandante;
     }
     
-    public String Demandante.getDireccion() {
-        return this.direccion;
+    public Perfil Demandante.getPerfil() {
+        return this.perfil;
     }
     
-    public void Demandante.setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void Demandante.setPerfil(Perfil perfil) {
+        this.perfil = perfil;
+    }
+    
+    public Usuario Demandante.getUsuario() {
+        return this.usuario;
+    }
+    
+    public void Demandante.setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
     
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:table="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_es_uca_iw_onlinejob_domain_Usuario" items="${usuarios}" z="TyTN1WBiOK58esbzVU65PRcolVQ=">
+        <table:table data="${usuarios}" id="l_es_uca_iw_onlinejob_domain_Usuario" path="/usuarios" z="exihzqXr0iz1f5FvwKjyaJ7qJkw=">
+            <table:column id="c_es_uca_iw_onlinejob_domain_Usuario_username" property="username" z="nMI7KA/TmMNMe/60Uqd0/wiOpfw="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Usuario_password" property="password" z="esu1EzrWpu8D4BknaxfPTV7kaZM="/>
+            <table:column date="true" dateTimePattern="${usuario_fecharegistro_date_format}" id="c_es_uca_iw_onlinejob_domain_Usuario_fechaRegistro" property="fechaRegistro" z="fNAhsPGyLJlcuKueB8XAon/LoGQ="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Usuario_email" property="email" z="F/eAK7DpaLH42sC6FjJYzXxKyho="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Usuario_rol" property="rol" z="69nTADkDj9/3uvgZg+pl8o3YAys="/>
+        </table:table>
+    </page:list>
+</div>

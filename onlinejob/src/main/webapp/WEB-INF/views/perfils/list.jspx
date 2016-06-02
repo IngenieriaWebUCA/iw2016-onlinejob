@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_es_uca_iw_onlinejob_domain_Perfil" items="${perfils}" z="69PnagJaOt21usQVzdz1xBx1kiM=">
+        <table:table data="${perfils}" id="l_es_uca_iw_onlinejob_domain_Perfil" path="/perfils" z="dzZ4JS1X0SijI2r52LMa7Yn4edA=">
+            <table:column id="c_es_uca_iw_onlinejob_domain_Perfil_trayectoria" property="trayectoria" z="8dweJR3GPadyMIMFvMjSV0+fiJ4="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Perfil_foto" property="foto" z="bk47vbMa6r5fY6a+BQYR2iJrpuM="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Perfil_lista_puesto_trabajo" property="lista_puesto_trabajo" z="1hLSr4fn4STe779V7JfdVWJIkvw="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Perfil_titulo_academico" property="titulo_academico" z="dm9A/1aCr3dX0DtAcKdVDAT0viM="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Perfil_curso_especializacion" property="curso_especializacion" z="oK7ZMsvppE6i+aGspa6i09mkgwQ="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Perfil_idioma" property="idioma" z="mS7WknLV+5oHeLUpnH18PcRqEeo="/>
+        </table:table>
+    </page:list>
+</div>

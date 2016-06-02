@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_es_uca_iw_onlinejob_domain_Perfil" modelAttribute="perfil" path="/perfils" versionField="Version" z="pVm5ZJ5001kcrqZ5omct1LIfTZw=">
+        <field:textarea field="trayectoria" id="c_es_uca_iw_onlinejob_domain_Perfil_trayectoria" z="o/btpAtYG/0zXlLKFMMRxZwBVkA="/>
+        <field:input field="foto" id="c_es_uca_iw_onlinejob_domain_Perfil_foto" z="1oPAro62DZT1tike+3rhDh9XM+I="/>
+        <field:textarea field="lista_puesto_trabajo" id="c_es_uca_iw_onlinejob_domain_Perfil_lista_puesto_trabajo" z="K3MQ5raQKbwX8NQJHBENqECZGQM="/>
+        <field:textarea field="titulo_academico" id="c_es_uca_iw_onlinejob_domain_Perfil_titulo_academico" required="true" z="pPWx/n4xXhQ6ycgn2M/Aw/MQkX0="/>
+        <field:textarea field="curso_especializacion" id="c_es_uca_iw_onlinejob_domain_Perfil_curso_especializacion" z="k6pDrRfgo6Ug4bGWUtyQl2DaKaY="/>
+        <field:textarea field="idioma" id="c_es_uca_iw_onlinejob_domain_Perfil_idioma" z="iNh6BO5K3HIoTbej9VdURzXVpPo="/>
+        <field:textarea field="nombre_empresa" id="c_es_uca_iw_onlinejob_domain_Perfil_nombre_empresa" z="fhJZ6nRyo7jr9lP0bHwScy2Br6o="/>
+        <field:datetime dateTimePattern="${perfil_fecha_inicio_date_format}" field="fecha_inicio" id="c_es_uca_iw_onlinejob_domain_Perfil_fecha_inicio" past="true" required="true" z="WvhIuiGq+uhxPU/9NXZ3QfVzYoA="/>
+        <field:datetime dateTimePattern="${perfil_fecha_fin_date_format}" field="fecha_fin" id="c_es_uca_iw_onlinejob_domain_Perfil_fecha_fin" z="Ah0z/z4LC73p8NQNtRr3OyCO3Ws="/>
+        <field:textarea field="puesto_trabajo_desempenado" id="c_es_uca_iw_onlinejob_domain_Perfil_puesto_trabajo_desempenado" z="ap+5W5IB1Vka3esTHFNOFDtULew="/>
+        <field:simple field="id_perfil" id="c_es_uca_iw_onlinejob_domain_Perfil_id_perfil" messageCode="entity_reference_not_managed" messageCodeAttribute="Demandante" z="Yfh4rj5kDP1hMbrz8Sy3QChsyKo="/>
+    </form:update>
+</div>

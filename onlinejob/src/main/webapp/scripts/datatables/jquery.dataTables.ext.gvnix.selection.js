@@ -1181,7 +1181,7 @@ var GvNIX_Selection;
 	 * @type StrFing
 	 * @default See code
 	 */
-	GvNIX_Selection.VERSION = "1.5.1.RC4";
+	GvNIX_Selection.VERSION = "1.5.1.RC3";
 	GvNIX_Selection.prototype.VERSION = GvNIX_Selection.VERSION;
 
 	/** TODO Add as datatable feature * */

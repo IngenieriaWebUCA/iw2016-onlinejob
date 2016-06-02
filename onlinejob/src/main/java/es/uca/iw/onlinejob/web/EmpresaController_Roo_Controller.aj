@@ -3,7 +3,10 @@
 
 package es.uca.iw.onlinejob.web;
 
+import es.uca.iw.onlinejob.domain.Direccion;
 import es.uca.iw.onlinejob.domain.Empresa;
+import es.uca.iw.onlinejob.domain.OfertaTrabajo;
+import es.uca.iw.onlinejob.domain.Usuario;
 import es.uca.iw.onlinejob.web.EmpresaController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -27,7 +30,7 @@ privileged aspect EmpresaController_Roo_Controller {
         }
         uiModel.asMap().clear();
         empresa.persist();
-        return "redirect:/empresas/" + encodeUrlPathSegment(empresa.getId_().toString(), httpServletRequest);
+        return "redirect:/empresas/" + encodeUrlPathSegment(empresa.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", produces = "text/html")
@@ -36,10 +39,10 @@ privileged aspect EmpresaController_Roo_Controller {
         return "empresas/create";
     }
     
-    @RequestMapping(value = "/{id_}", produces = "text/html")
-    public String EmpresaController.show(@PathVariable("id_") Long id_, Model uiModel) {
-        uiModel.addAttribute("empresa", Empresa.findEmpresa(id_));
-        uiModel.addAttribute("itemId", id_);
+    @RequestMapping(value = "/{id}", produces = "text/html")
+    public String EmpresaController.show(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("empresa", Empresa.findEmpresa(id));
+        uiModel.addAttribute("itemId", id);
         return "empresas/show";
     }
     
@@ -65,18 +68,18 @@ privileged aspect EmpresaController_Roo_Controller {
         }
         uiModel.asMap().clear();
         empresa.merge();
-        return "redirect:/empresas/" + encodeUrlPathSegment(empresa.getId_().toString(), httpServletRequest);
+        return "redirect:/empresas/" + encodeUrlPathSegment(empresa.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{id_}", params = "form", produces = "text/html")
-    public String EmpresaController.updateForm(@PathVariable("id_") Long id_, Model uiModel) {
-        populateEditForm(uiModel, Empresa.findEmpresa(id_));
+    @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
+    public String EmpresaController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        populateEditForm(uiModel, Empresa.findEmpresa(id));
         return "empresas/update";
     }
     
-    @RequestMapping(value = "/{id_}", method = RequestMethod.DELETE, produces = "text/html")
-    public String EmpresaController.delete(@PathVariable("id_") Long id_, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Empresa empresa = Empresa.findEmpresa(id_);
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
+    public String EmpresaController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Empresa empresa = Empresa.findEmpresa(id);
         empresa.remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
@@ -86,6 +89,9 @@ privileged aspect EmpresaController_Roo_Controller {
     
     void EmpresaController.populateEditForm(Model uiModel, Empresa empresa) {
         uiModel.addAttribute("empresa", empresa);
+        uiModel.addAttribute("direccions", Direccion.findAllDireccions());
+        uiModel.addAttribute("ofertatrabajoes", OfertaTrabajo.findAllOfertaTrabajoes());
+        uiModel.addAttribute("usuarios", Usuario.findAllUsuarios());
     }
     
     String EmpresaController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

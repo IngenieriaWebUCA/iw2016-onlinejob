@@ -17,19 +17,19 @@ privileged aspect Empresa_Roo_Jpa_Entity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_")
-    private Long Empresa.id_;
+    @Column(name = "id")
+    private Long Empresa.id;
     
     @Version
     @Column(name = "version")
     private Integer Empresa.version;
     
-    public Long Empresa.getId_() {
-        return this.id_;
+    public Long Empresa.getId() {
+        return this.id;
     }
     
-    public void Empresa.setId_(Long id) {
-        this.id_ = id;
+    public void Empresa.setId(Long id) {
+        this.id = id;
     }
     
     public Integer Empresa.getVersion() {

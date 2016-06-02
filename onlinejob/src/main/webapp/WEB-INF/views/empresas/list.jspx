@@ -3,13 +3,13 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_onlinejob_domain_Empresa" items="${empresas}" z="/612WBfEP0byzUy1OqaNDvq+x1c=">
-        <table:table data="${empresas}" id="l_es_uca_iw_onlinejob_domain_Empresa" path="/empresas" typeIdFieldName="id_" z="c82iwEdr3wn6DPiHgvlPZjJJVps=">
+        <table:table data="${empresas}" id="l_es_uca_iw_onlinejob_domain_Empresa" path="/empresas" z="4uxfENNNY0Uk/XkMlVJg4ekX7rc=">
             <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_nombre" property="nombre" z="AuOlIDUgkj1J+m6cqYOpZXhdQcE="/>
-            <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_id" property="id" z="PtX4+G6enOu7Y8xn4lA4zzuLtz8="/>
             <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_cif" property="cif" z="zsou/5fNWAMMRCMwQkuIHxaBMBw="/>
-            <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_n_trabajadores" property="n_trabajadores" z="3+jS8ootLWowg9R+j2vVsZwJmSU="/>
             <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_email" property="email" z="xe5Urki5jcjOH9GmV5w/GfzT578="/>
-            <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_id_localizacion" property="id_localizacion" z="khf1RAQU3hmbsgzr1BKB6OnCDnQ="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_actividad_profesional" property="actividad_profesional" z="g/5WL4LgAeJRkbbEZG1tNnYQGa4="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_num_empleados" property="num_empleados" z="Af4Q0Zxp6SaKm5QfmY/WlxAC1MQ="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_telefono" property="telefono" z="R7ywYeFsC6NyDHOh/s5CB8v2KG8="/>
         </table:table>
     </page:list>
 </div>

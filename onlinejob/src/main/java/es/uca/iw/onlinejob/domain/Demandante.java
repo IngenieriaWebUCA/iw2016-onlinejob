@@ -7,7 +7,11 @@ import javax.validation.constraints.Size;
 import java.util.Date;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Past;
 import org.springframework.format.annotation.DateTimeFormat;
+import es.uca.iw.onlinejob.reference.EstadoOferta;
+import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
@@ -17,31 +21,22 @@ public class Demandante {
     /**
      */
     @NotNull
-    private int id;
+    @Size(min = 3)
+    private String dni;
 
     /**
      */
     @NotNull
-    @Size(max = 50)
+    @Size(min = 3, max = 32)
     private String nombre;
 
     /**
      */
     @NotNull
-    @Size(max = 50)
-    private String apellidos;
-
-    /**
-     */
-    @NotNull
+    @Past
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
-    private Date f_nacimiento;
-
-    /**
-     */
-    @NotNull
-    private String email;
+    private Date fecha_nacimiento;
 
     /**
      */
@@ -51,20 +46,37 @@ public class Demandante {
     /**
      */
     @NotNull
+    private String direccion;
+
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 32)
+    private String email;
+
+    /**
+     */
+    @NotNull
     private String telefono;
 
     /**
      */
-    @NotNull
-    private int id_cv;
+    @Enumerated
+    private EstadoOferta estado;
 
     /**
      */
-    @NotNull
-    private String ciudad;
+    @ManyToOne
+    private OfertaTrabajo ofertademandante;
 
     /**
      */
-    @NotNull
-    private String direccion;
+    @ManyToOne
+    private Perfil perfil;
+
+    /**
+     */
+    @ManyToOne
+    private Usuario usuario;
+
 }

@@ -14,7 +14,7 @@ privileged aspect Empresa_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager Empresa.entityManager;
     
-    public static final List<String> Empresa.fieldNames4OrderClauseFilter = java.util.Arrays.asList("nombre", "id", "cif", "n_trabajadores", "email", "id_localizacion", "actividad", "descripcion");
+    public static final List<String> Empresa.fieldNames4OrderClauseFilter = java.util.Arrays.asList("nombre", "cif", "email", "actividad_profesional", "num_empleados", "telefono", "usuario", "direccion", "oferta");
     
     public static final EntityManager Empresa.entityManager() {
         EntityManager em = new Empresa().entityManager;
@@ -41,9 +41,9 @@ privileged aspect Empresa_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery(jpaQuery, Empresa.class).getResultList();
     }
     
-    public static Empresa Empresa.findEmpresa(Long id_) {
-        if (id_ == null) return null;
-        return entityManager().find(Empresa.class, id_);
+    public static Empresa Empresa.findEmpresa(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Empresa.class, id);
     }
     
     public static List<Empresa> Empresa.findEmpresaEntries(int firstResult, int maxResults) {
@@ -73,7 +73,7 @@ privileged aspect Empresa_Roo_Jpa_ActiveRecord {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Empresa attached = Empresa.findEmpresa(this.id_);
+            Empresa attached = Empresa.findEmpresa(this.id);
             this.entityManager.remove(attached);
         }
     }

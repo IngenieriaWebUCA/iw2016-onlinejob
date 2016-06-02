@@ -1,88 +1,145 @@
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-04-28 16:28:18
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-30 12:33:54
 project --topLevelPackage es.uca.iw.onlinejob --projectName onlinejob --java 7 --packaging JAR
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-04-28 16:28:19
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-04-28 17:09:02
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-04-29 17:12:17
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-06 00:38:29
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-06 11:40:01
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-09 13:21:32
-jpa setup --database MYSQL --provider HIBERNATE
-entity jpa --class ~.domain.Empresa
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-12 16:24:26
-jpa setup --provider HIBERNATE --database MYSQL
-database properties list
-jpa setup --provider HIBERNATE --database MYSQL
-database properties list
-hint
-// [failed] database reverse engineer --schema onlinejobs
-// [failed] database reverse engineer --schema onlinejobs
-addon search jdbc
-download status
-download accept terms of use
-addon search jdbc
-addon install bundle --bundleSymbolicName TAB
-hint
-field string --fieldName firstName --sizeMin 3 --sizeMax 30 --class ~.domain.Empresa
-field string --fieldName nombre --sizeMax 30 --class ~.domain.Empresa
-field number --fieldName id --type java.lang.Int --notNull --Max 1 --class ~.domain.Empresa
-field string --fieldName cif --notNull --sizeMax 15 --class ~.domain.Empresa
-field number --fieldName n_trabajadores --type java.lang.int --notNull --Max 6 --class ~.domain.Empresa
-field string --fieldName email --notNull --sizeMax 15 --class ~.domain.Empresa
-field number --fieldName id_localizacion --type java.lang.int --notNull --Max 6 --class ~.domain.Empresa
-field string --fieldName actividad --notNull --sizeMax 15 --class ~.domain.Empresa
-field string --fieldName descripcion --notNull --sizeMax 15 --class ~.domain.Empresa
-entity jpa --class ~.domain.Localizacion
-field number --fieldName id --type java.lang.int --notNull --Max 6 --class ~.domain.Localizacion
-field number --fieldName id_empresa --type java.lang.int --notNull --Max 6 --class ~.domain.Localizacion
-field string --fieldName nombre --notNull --sizeMax 15 --class ~.domain.Localizacion
-field string --fieldName direccion --notNull --sizeMax 15 --class ~.domain.Localizacion
-field string --fieldName telefono --notNull --sizeMax 15 --class ~.domain.Localizacion
-field string --fieldName ciudad --notNull --sizeMax 15 --class ~.domain.Localizacion
-entity jpa --class ~.domain.demandante
-field number --fieldName id --type java.lang.int --notNull --Max 6 --class ~.domain.Demandante
-field string --fieldName nombre --notNull --sizeMax 50 --class ~.domain.Demandante
-field string --fieldName apellidos --notNull --sizeMax 50 --class ~.domain.Demandante
-field date --fieldName f_nacimiento --type java.util.Date --notNull --class ~.domain.Demandante
-field string --fieldName email --notNull --class ~.domain.Demandante
-field string --fieldName sexo --notNull --class ~.domain.Demandante
-field string --fieldName telefono --notNull --class ~.domain.Demandante
-field number --fieldName id_cv --type java.lang.int --notNull --Max 6 --class ~.domain.Demandante
-field string --fieldName ciudad --notNull --class ~.domain.Demandante
-field string --fieldName direccion --notNull --class ~.domain.Demandante
-entity jpa --class ~.domain.oferta
-field number --fieldName id --type java.lang.int --notNull --Max 6 --class ~.domain.Oferta
-field date --fieldName f_inicio --type java.util.Date --notNull --class ~.domain.Oferta
-field date --fieldName f_final --type java.util.Date --notNull --class ~.domain.Oferta
-field number --fieldName id_estadooferta --type java.lang.int --notNull --Max 6 --class ~.domain.Oferta
-field string --fieldName titulo --notNull --class ~.domain.Oferta
-field string --fieldName t_puesto --notNull --class ~.domain.Oferta
-field string --fieldName t_contrato --notNull --class ~.domain.Oferta
-field number --fieldName sueldo --type java.lang.int --class ~.domain.Oferta
-field date --fieldName f_inicio_contrato --type java.util.Date --notNull --class ~.domain.Oferta
-field number --fieldName n_vacantes --notNull --type java.lang.int --class ~.domain.Oferta
-field string --fieldName perfil --notNull --class ~.domain.Oferta
-field number --fieldName id_empresa --notNull --type java.lang.int --class ~.domain.Oferta
-field number --fieldName id_localizacion --notNull --type java.lang.int --class ~.domain.Oferta
-entity jpa --class ~.domain.estadooferta
-field number --fieldName id_localizacion --notNull --type java.lang.int --class ~.domain.estadooferta
-field number --fieldName id --notNull --type java.lang.int --class ~.domain.estadooferta
-field string --fieldName nombre --notNull --class ~.domain.Oferta
-field string --fieldName nombre --notNull --class ~.domain.estadooferta
-field string --fieldName descripcion --notNull --class ~.domain.estadooferta
-jpa setup --provider HIBERNATE --database HYPERSONIC_PERSISTENT
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-30 12:33:55
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-30 12:35:36
+jpa setup --provider HIBERNATE --database MYSQL --databaseName onlinejob --userName admin --password admin
+database properties set --key database.url --value jdbc:mysql://localhost:3306/onlinejob 
+entity jpa --class es.uca.iw.onlinejob.domain.Usuario --testAutomatically
+entity jpa --class es.uca.iw.onlinejob.domain.Empresa --testAutomatically
+entity jpa --class es.uca.iw.onlinejob.domain.Direccion --testAutomatically
+entity jpa --class es.uca.iw.onlinejob.domain.OfertaTrabajo --testAutomatically
+entity jpa --class es.uca.iw.onlinejob.domain.Demandante --testAutomatically
+entity jpa --class es.uca.iw.onlinejob.domain.Perfil --testAutomatically
+enum type --class es.uca.iw.onlinejob.reference.TipoUsuario
+enum constant --name Empresa
+enum constant --name Demandante
+enum type --class es.uca.iw.onlinejob.reference.EstadoOferta
+enum constant --name recibida
+enum constant --name retirada
+enum constant --name estudio
+enum constant --name descartada
+enum constant --name aceptada
+enum type --class es.uca.iw.onlinejob.reference.EstadoEmpleo
+enum constant --name espera
+enum constant --name activa
+enum constant --name detenida
+enum constant --name cancelada
+enum constant --name tramite
+enum constant --name resuelta
+field string --fieldName username --notNull --sizeMin 3 --sizeMax 32 --class es.uca.iw.onlinejob.domain.Usuario
+field string --fieldName password --notNull --sizeMin 8 --sizeMax 32
+field date --fieldName fechaRegistro --notNull --type java.util.Date --past
+field string --fieldName email --sizeMin 8 --sizeMax 32
+field enum --fieldName tipo_usuario --type es.uca.iw.onlinejob.reference.TipoUsuario
+field string --fieldName nombre --sizeMin 3 --sizeMax 32 --notNull --class es.uca.iw.onlinejob.domain.Empresa
+field string --fieldName cif --sizeMin 9 --sizeMax 9 --notNull
+field string --fieldName email --sizeMin 8 --sizeMax 32
+field string --fieldName actividad_profesional --sizeMax 256 
+field number --fieldName num_empleados --type java.lang.Float --min 0  
+field string --fieldName telefono --sizeMin 9 --notNull  
+field set --class es.uca.iw.onlinejob.domain.Usuario --fieldName id_usuario --type es.uca.iw.onlinejob.domain.Empresa --mappedBy usuario --notNull false --cardinality ONE_TO_MANY
+field reference --fieldName usuario --type ~.domain.Usuario --class es.uca.iw.onlinejob.domain.Empresa
 web mvc setup
 web mvc all --package ~.web
+field string --fieldName nombre --notNull --sizeMin 3 --sizeMax 32 --class es.uca.iw.onlinejob.domain.Direccion
+field string --fieldName num --notNull
+field string --fieldName cp --notNull
+field set --class es.uca.iw.onlinejob.domain.Direccion --fieldName id_direccion --type es.uca.iw.onlinejob.domain.Empresa --mappedBy direccion --notNull false --cardinality ONE_TO_MANY
+field reference --fieldName direccion --type ~.domain.Direccion --class es.uca.iw.onlinejob.domain.Empresa
 web mvc all --package ~.web
-web mvc scaffold --class ~.web.EmpresaListController --backingType ~.domain.Empresa --path empresalist
-web mvc finder all
+field string --fieldName tipologia_contrato --notNull --sizeMin 3 --sizeMax 32 --class es.uca.iw.onlinejob.domain.OfertaTrabajo
+field number --fieldName sueldo_bruto --type java.lang.Float --notNull --min 0
+field date --fieldName fecha_inicio --type java.util.Date --notNull
+field string --fieldName num_vacantes --notNull
+field string --fieldName perfil --notNull --sizeMax 256
+field string --fieldName formacion --notNull --sizeMin 3 --sizeMax 32
+field string --fieldName experiencia_previa --notNull
+field enum --fieldName estado_empleo --type es.uca.iw.onlinejob.reference.EstadoEmpleo
+field set --fieldName id_ofertaEmpresa --type es.uca.iw.onlinejob.domain.Empresa --class es.uca.iw.onlinejob.domain.OfertaTrabajo --cardinality ONE_TO_MANY --mappedBy oferta
+field reference --fieldName oferta --type ~.domain.OfertaTrabajo --class es.uca.iw.onlinejob.domain.Empresa
+field string --fieldName dni --notNull --sizeMin 3 --sizeMax 32 --class es.uca.iw.onlinejob.domain.Demandante
+field string --fieldName nombre --notNull --sizeMin 3 --sizeMax 32
+field date --fieldName fecha_nacimiento --type java.util.Date --notNull --past
+field string --fieldName sexo --notNull
+field string --fieldName direccion --notNull
+field string --fieldName email --notNull --sizeMin 3 --sizeMax 32
+field string --fieldName telefono --notNull
+field enum --fieldName estado --type es.uca.iw.onlinejob.reference.EstadoOferta
+field set --class es.uca.iw.onlinejob.domain.OfertaTrabajo  --fieldName id_oferta_demandante --type es.uca.iw.onlinejob.domain.Demandante --mappedBy ofertademandante --notNull false --cardinality MANY_TO_MANY
+field reference --fieldName ofertademandante --type ~.domain.OfertaTrabajo --class es.uca.iw.onlinejob.domain.Demandante
+field string --fieldName trayectoria --sizeMax 256 --class es.uca.iw.onlinejob.domain.Perfil
+field string --fieldName foto
+field string --fieldName lista_puesto_trabajo --sizeMin 3 --sizeMax 32
+field string --fieldName titulo_academico --notNull --sizeMin 3 --sizeMax 32
+// [failed] field string --fieldName titulo_academico --notNull --sizeMin 3 --sizeMax 32
+field string --fieldName curso_especializacion --sizeMin 3 --sizeMax 32
+field string --fieldName idioma --sizeMin 3 --sizeMax 32
+field string --fieldName nombre_empresa --sizeMin 3 --sizeMax 32
+field date --fieldName fecha_inicio --type java.util.Date --notNull --past
+field date --fieldName fecha_fin --type java.util.Date
+field string --fieldName puesto_trabajo_desempenado --sizeMin 3 --sizeMax 32
+field set --class es.uca.iw.onlinejob.domain.Perfil --fieldName id_perfil --type es.uca.iw.onlinejob.domain.Demandante --mappedBy perfil --notNull false --cardinality ONE_TO_MANY
+field reference --fieldName perfil --type ~.domain.Perfil --class es.uca.iw.onlinejob.domain.Demandante
+web mvc all --package ~.web
 web mvc language --code es
-web mvc language --code en
+web mvc language --code de
 web mvc jquery setup
 web mvc jquery all
-web mvc jquery add --type ~.web.EmpresaController
 web mvc datatables setup
 web mvc bootstrap setup
-jpa gvnix setup
-jpa batch all
-web mvc batch setup
-web mvc batch all
+web mvc jquery all
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-30 13:20:36
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-30 18:39:34
+web mvc bootstrap update
+security setup
+enum type --class es.uca.iw.onlinejob.reference.Rol
+enum constant --name ROL_USUARIO
+enum constant --name ROL_DEMANDANTE
+enum constant --name ROL_EMPRESA
+field enum --fieldName rol --type es.uca.iw.onlinejob.reference.Rol --notNull --class es.uca.iw.onlinejob.domain.Usuario
+field string --fieldName enable --sizeMax 2 --class es.uca.iw.onlinejob.domain.Usuario
+field string --fieldName enabled --sizeMax 2 --class es.uca.iw.onlinejob.domain.Usuario
+web mvc all --package ~.web
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-30 21:31:27
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-31 19:50:32
+field set --class es.uca.iw.onlinejob.domain.Usuario --fieldName id_demandante --type es.uca.iw.onlinejob.domain.Demandante --mappedBy demandante --notNull false --cardinality ONE_TO_MANY
+field reference --fieldName usuario --type ~.domain.Usuario --class es.uca.iw.onlinejob.domain.Demandante
+field set --class es.uca.iw.onlinejob.domain.Usuario --fieldName id_demandante --type es.uca.iw.onlinejob.domain.Demandante --mappedBy usuariod --notNull false --cardinality ONE_TO_MANY
+field reference --fieldName usuariod --type ~.domain.Usuario --class es.uca.iw.onlinejob.domain.Demandante
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-31 20:09:36
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-01 08:47:37
+// [failed] menu setup
+web mvc loupe setup
+// [failed] web mvc loupe set --controller ~.web.UsuarioController
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-01 09:40:19
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-01 10:09:10
+web mvc datatables add --type ~.web.UsuarioController
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-01 10:19:09
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-01 21:39:26
+field string --fieldName usernameeeeee --notNull --sizeMin 3 --sizeMax 30 --class es.uca.iw.onlinejob.domain.Usuario
+web mvc all --package ~.web
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-02 02:51:45
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-02 13:30:29
+field string --fieldName nombre --notNull --sizeMin 3 --sizeMax 30 --class es.uca.iw.onlinejob.domain.OfertaTrabajo
+web mvc all --package ~.web
+finder add --finderName findOfertatrabajoesByformacion  --class es.uca.iw.onlinejob.domain.Ofertatrabajo
+finder add --finderName findOfertatrabajoesByformacion  --class es.uca.iw.onlinejob.domain.OfertaTrabajo
+finder add --finderName findOfertatrabajoesByformacion  --class es.uca.iw.onlinejob.domain.OfertaTrabajoLike
+finder add --finderName findOfertatrabajoesByformacionLike  --class es.uca.iw.onlinejob.domain.OfertaTrabajo
+finder add --finderName findofertatrabajoesByformacionLike  --class es.uca.iw.onlinejob.domain.OfertaTrabajo
+finder add --finderName findofertatrabajoesByformacion  --class es.uca.iw.onlinejob.domain.OfertaTrabajo
+finder add --finderName findofertatrabajoesByestado_empleo --class es.uca.iw.onlinejob.domain.OfertaTrabajo
+selenium test --controller ~.web.UsuarioController
+// [failed] selenium test --controller ~.web.OferaTrabajoController
+selenium test --controller ~.web.OfertaTrabajoController
+selenium test --controller ~.web.PerfilController
+// [failed] selenium test --controller ~.web.DemandanterController
+selenium test --controller ~.web.DemandanteController
+selenium test --controller ~.web.EmpresaController
+selenium test --controller ~.web.DireccionController
+test integration --entity ~.domain.Usuario
+test integration --entity ~.domain.OfertaTrabajo
+test integration --entity ~.domain.Perfil
+test integration --entity ~.domain.Demandante
+test integration --entity ~.domain.Empresa
+test integration --entity ~.domain.Direccion

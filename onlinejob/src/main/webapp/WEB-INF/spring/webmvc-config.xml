@@ -29,6 +29,7 @@
     </mvc:interceptors>
 
     <!-- Selects a static view for rendering without the need for an explicit controller -->
+    <mvc:view-controller path="/login"/>
     <mvc:view-controller path="/" view-name="index"/>
     <mvc:view-controller path="/uncaughtException"/>
     <mvc:view-controller path="/resourceNotFound"/>
@@ -80,9 +81,4 @@
 <bean class="org.gvnix.web.datatables.util.impl.EntityManagerProviderImpl" id="entityManagerProvider"/>
     <bean class="org.gvnix.web.datatables.util.impl.DatatablesUtilsBeanImpl" id="datatableUtilsBean"/>
     <bean class="org.gvnix.web.datatables.util.impl.QuerydslUtilsBeanImpl" id="querydslUtilsBean"/>
-<bean class="org.gvnix.web.json.Jackson2RequestMappingHandlerAdapter" id="dataBinderRequestMappingHandlerAdapter" p:order="1">
-        <property name="objectMapper">
-            <bean class="org.gvnix.web.json.ConversionServiceObjectMapper"/>
-        </property>
-    </bean>
 </beans>

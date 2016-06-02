@@ -14,7 +14,7 @@ privileged aspect Demandante_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager Demandante.entityManager;
     
-    public static final List<String> Demandante.fieldNames4OrderClauseFilter = java.util.Arrays.asList("id", "nombre", "apellidos", "f_nacimiento", "email", "sexo", "telefono", "id_cv", "ciudad", "direccion");
+    public static final List<String> Demandante.fieldNames4OrderClauseFilter = java.util.Arrays.asList("dni", "nombre", "fecha_nacimiento", "sexo", "direccion", "email", "telefono", "estado", "ofertademandante", "perfil", "usuario");
     
     public static final EntityManager Demandante.entityManager() {
         EntityManager em = new Demandante().entityManager;
@@ -41,9 +41,9 @@ privileged aspect Demandante_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery(jpaQuery, Demandante.class).getResultList();
     }
     
-    public static Demandante Demandante.findDemandante(Long id_) {
-        if (id_ == null) return null;
-        return entityManager().find(Demandante.class, id_);
+    public static Demandante Demandante.findDemandante(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Demandante.class, id);
     }
     
     public static List<Demandante> Demandante.findDemandanteEntries(int firstResult, int maxResults) {
@@ -73,7 +73,7 @@ privileged aspect Demandante_Roo_Jpa_ActiveRecord {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Demandante attached = Demandante.findDemandante(this.id_);
+            Demandante attached = Demandante.findDemandante(this.id);
             this.entityManager.remove(attached);
         }
     }

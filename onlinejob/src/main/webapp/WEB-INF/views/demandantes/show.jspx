@@ -3,15 +3,16 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_es_uca_iw_onlinejob_domain_Demandante" object="${demandante}" path="/demandantes" z="hWBVNJE76z/YKyDnlr+vTSCyPns=">
-        <field:display field="id" id="s_es_uca_iw_onlinejob_domain_Demandante_id" object="${demandante}" z="CJJa0f2CsAIn2fCEJ8hxEPwyU1I="/>
+        <field:display field="dni" id="s_es_uca_iw_onlinejob_domain_Demandante_dni" object="${demandante}" z="aKPn9u9qTYXZjs3Qtu6Y50W2dwE="/>
         <field:display field="nombre" id="s_es_uca_iw_onlinejob_domain_Demandante_nombre" object="${demandante}" z="Q+QYPRQokgYwt/zb2PY/CECDGOM="/>
-        <field:display field="apellidos" id="s_es_uca_iw_onlinejob_domain_Demandante_apellidos" object="${demandante}" z="3ZZxm44VXbfAVM/SMhaeE3YiaIc="/>
-        <field:display date="true" dateTimePattern="${demandante_f_nacimiento_date_format}" field="f_nacimiento" id="s_es_uca_iw_onlinejob_domain_Demandante_f_nacimiento" object="${demandante}" z="cwKSvzCxZaNh0F3pFnDQG4e78wg="/>
-        <field:display field="email" id="s_es_uca_iw_onlinejob_domain_Demandante_email" object="${demandante}" z="Feyk2sqeEXkV7yesWNFzQfhSVf8="/>
+        <field:display date="true" dateTimePattern="${demandante_fecha_nacimiento_date_format}" field="fecha_nacimiento" id="s_es_uca_iw_onlinejob_domain_Demandante_fecha_nacimiento" object="${demandante}" z="J4qPf1XmJI+NDzqdvnPJ0LWMvlg="/>
         <field:display field="sexo" id="s_es_uca_iw_onlinejob_domain_Demandante_sexo" object="${demandante}" z="rOWsc/e6Gj8UnNXiXEi12u4JxEs="/>
-        <field:display field="telefono" id="s_es_uca_iw_onlinejob_domain_Demandante_telefono" object="${demandante}" z="ROnnCo8F64Aw3lyliPapFjY2NZg="/>
-        <field:display field="id_cv" id="s_es_uca_iw_onlinejob_domain_Demandante_id_cv" object="${demandante}" z="Q5k5MlX2+soMRyoeIkC6SuEBAY0="/>
-        <field:display field="ciudad" id="s_es_uca_iw_onlinejob_domain_Demandante_ciudad" object="${demandante}" z="Jq99rZ2PAjqP93zi3hXFJQGTN7o="/>
         <field:display field="direccion" id="s_es_uca_iw_onlinejob_domain_Demandante_direccion" object="${demandante}" z="+U7re+P8wr2QpDPDGiLtXsQS+pM="/>
+        <field:display field="email" id="s_es_uca_iw_onlinejob_domain_Demandante_email" object="${demandante}" z="Feyk2sqeEXkV7yesWNFzQfhSVf8="/>
+        <field:display field="telefono" id="s_es_uca_iw_onlinejob_domain_Demandante_telefono" object="${demandante}" z="ROnnCo8F64Aw3lyliPapFjY2NZg="/>
+        <field:display field="estado" id="s_es_uca_iw_onlinejob_domain_Demandante_estado" object="${demandante}" z="3+xSk4wUgvPVW7ZcgrRuC9SEXDY="/>
+        <field:display field="ofertademandante" id="s_es_uca_iw_onlinejob_domain_Demandante_ofertademandante" object="${demandante}" z="KNWU9VEi4WcyJDtuQcc9x+w6CNk="/>
+        <field:display field="perfil" id="s_es_uca_iw_onlinejob_domain_Demandante_perfil" object="${demandante}" z="z76mAEyUGFlHhs0kWTTCfmQY/rQ="/>
+        <field:display field="usuario" id="s_es_uca_iw_onlinejob_domain_Demandante_usuario" object="${demandante}" z="XpMQd8V2Bvf9nOEWS/z8TmDcknw="/>
     </page:show>
 </div>

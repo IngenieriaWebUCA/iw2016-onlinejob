@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_es_uca_iw_onlinejob_domain_Usuario" object="${usuario}" path="/usuarios" z="IEBqd0xxkLfIqkbMytLC4ubtv9I=">
+        <field:display field="username" id="s_es_uca_iw_onlinejob_domain_Usuario_username" object="${usuario}" z="eIzunSvfNiJB01JwRmAyMhkcHGA="/>
+        <field:display field="password" id="s_es_uca_iw_onlinejob_domain_Usuario_password" object="${usuario}" z="cRy7UImJs3yXdIsywjMUfoj07gI="/>
+        <field:display date="true" dateTimePattern="${usuario_fecharegistro_date_format}" field="fechaRegistro" id="s_es_uca_iw_onlinejob_domain_Usuario_fechaRegistro" object="${usuario}" z="sB4rH4HtoUw/38OfcBNCcNopgms="/>
+        <field:display field="email" id="s_es_uca_iw_onlinejob_domain_Usuario_email" object="${usuario}" z="p6VcdNAfr8T8iP8oMVks6a+STuY="/>
+        <field:display field="rol" id="s_es_uca_iw_onlinejob_domain_Usuario_rol" object="${usuario}" z="ojFhItTFUD6WjFB8wtc3aNY8uTQ="/>
+        <field:display field="enabled" id="s_es_uca_iw_onlinejob_domain_Usuario_enabled" object="${usuario}" z="ZjHEStu5MvhwsUqeg2PBAiQMCY4="/>
+    </page:show>
+</div>

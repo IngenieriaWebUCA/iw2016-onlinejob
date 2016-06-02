@@ -253,10 +253,7 @@
   <spring:url value="" var="urlParams">
     <spring:param name="form"/>
     <c:forEach var="paramAux" items="${param}" >
-      <!-- if dtt_ignoreParms (Collection<String>) is defined ignore params registered on it  -->
-      <c:if test="${empty dtt_ignoreParams or !dtt_ignoreParams.contains(paramAux.key) }">
-        <spring:param name="${paramAux.key}" value="${paramAux.value}" />
-      </c:if>
+      <spring:param name="${paramAux.key}" value="${paramAux.value}" />
     </c:forEach>
   </spring:url>
 
@@ -297,12 +294,6 @@
 	  <c:if test="${not empty rolesAuthorizedDelete}">
 	    <sec:authorize var="authorizedDelete" access="hasAnyRole('${rolesAuthorizedDelete}')" />
 	  </c:if>
-  </c:if>
-
-  <c:if test="${not empty dtt_disableEditing and dtt_disableEditing}">
-     <c:set var="create" value="false"/>
-     <c:set var="update" value="false"/>
-     <c:set var="delete" value="false"/>
   </c:if>
   <c:if test="${empty show and authorizedShow}">
       <c:set var="show" value="true"/>

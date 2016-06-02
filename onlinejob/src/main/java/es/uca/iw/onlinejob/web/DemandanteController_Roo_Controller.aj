@@ -4,8 +4,13 @@
 package es.uca.iw.onlinejob.web;
 
 import es.uca.iw.onlinejob.domain.Demandante;
+import es.uca.iw.onlinejob.domain.OfertaTrabajo;
+import es.uca.iw.onlinejob.domain.Perfil;
+import es.uca.iw.onlinejob.domain.Usuario;
+import es.uca.iw.onlinejob.reference.EstadoOferta;
 import es.uca.iw.onlinejob.web.DemandanteController;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.joda.time.format.DateTimeFormat;
@@ -29,7 +34,7 @@ privileged aspect DemandanteController_Roo_Controller {
         }
         uiModel.asMap().clear();
         demandante.persist();
-        return "redirect:/demandantes/" + encodeUrlPathSegment(demandante.getId_().toString(), httpServletRequest);
+        return "redirect:/demandantes/" + encodeUrlPathSegment(demandante.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", produces = "text/html")
@@ -38,11 +43,11 @@ privileged aspect DemandanteController_Roo_Controller {
         return "demandantes/create";
     }
     
-    @RequestMapping(value = "/{id_}", produces = "text/html")
-    public String DemandanteController.show(@PathVariable("id_") Long id_, Model uiModel) {
+    @RequestMapping(value = "/{id}", produces = "text/html")
+    public String DemandanteController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("demandante", Demandante.findDemandante(id_));
-        uiModel.addAttribute("itemId", id_);
+        uiModel.addAttribute("demandante", Demandante.findDemandante(id));
+        uiModel.addAttribute("itemId", id);
         return "demandantes/show";
     }
     
@@ -69,18 +74,18 @@ privileged aspect DemandanteController_Roo_Controller {
         }
         uiModel.asMap().clear();
         demandante.merge();
-        return "redirect:/demandantes/" + encodeUrlPathSegment(demandante.getId_().toString(), httpServletRequest);
+        return "redirect:/demandantes/" + encodeUrlPathSegment(demandante.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{id_}", params = "form", produces = "text/html")
-    public String DemandanteController.updateForm(@PathVariable("id_") Long id_, Model uiModel) {
-        populateEditForm(uiModel, Demandante.findDemandante(id_));
+    @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
+    public String DemandanteController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        populateEditForm(uiModel, Demandante.findDemandante(id));
         return "demandantes/update";
     }
     
-    @RequestMapping(value = "/{id_}", method = RequestMethod.DELETE, produces = "text/html")
-    public String DemandanteController.delete(@PathVariable("id_") Long id_, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Demandante demandante = Demandante.findDemandante(id_);
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
+    public String DemandanteController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Demandante demandante = Demandante.findDemandante(id);
         demandante.remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
@@ -89,12 +94,16 @@ privileged aspect DemandanteController_Roo_Controller {
     }
     
     void DemandanteController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("demandante_f_nacimiento_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("demandante_fecha_nacimiento_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
     void DemandanteController.populateEditForm(Model uiModel, Demandante demandante) {
         uiModel.addAttribute("demandante", demandante);
         addDateTimeFormatPatterns(uiModel);
+        uiModel.addAttribute("ofertatrabajoes", OfertaTrabajo.findAllOfertaTrabajoes());
+        uiModel.addAttribute("perfils", Perfil.findAllPerfils());
+        uiModel.addAttribute("usuarios", Usuario.findAllUsuarios());
+        uiModel.addAttribute("estadoofertas", Arrays.asList(EstadoOferta.values()));
     }
     
     String DemandanteController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

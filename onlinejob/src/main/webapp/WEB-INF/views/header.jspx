@@ -2,7 +2,7 @@
   <jsp:directive.page contentType="text/html;charset=UTF-8" />
   <jsp:output omit-xml-declaration="yes" />
 
-      <spring:url var="logo_gvnix" value="/resources/images/logo_gvnix.png" />
+      <spring:url var="logo_gvnix" value="/resources/images/logo_gvnix.png" htmlEscape="" />
       <spring:url var="home" value="/" />
       <spring:message code="button_home" var="home_label" htmlEscape="false" />
 

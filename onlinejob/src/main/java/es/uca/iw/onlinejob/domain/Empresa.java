@@ -2,8 +2,10 @@ package es.uca.iw.onlinejob.domain;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
-import javax.validation.constraints.Size;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.Min;
+import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
@@ -12,45 +14,49 @@ public class Empresa {
 
     /**
      */
-    @Size(max = 30)
+    @NotNull
+    @Size(min = 3, max = 32)
     private String nombre;
 
     /**
      */
     @NotNull
-    private int id;
-
-    /**
-     */
-    @NotNull
-    @Size(max = 15)
+    @Size(min = 9, max = 9)
     private String cif;
 
     /**
      */
-    @NotNull
-    private int n_trabajadores;
-
-    /**
-     */
-    @NotNull
-    @Size(max = 15)
+    @Size(min = 8, max = 32)
     private String email;
 
     /**
      */
-    @NotNull
-    private int id_localizacion;
+    @Size(max = 256)
+    private String actividad_profesional;
+
+    /**
+     */
+    @Min(0L)
+    private Float num_empleados;
 
     /**
      */
     @NotNull
-    @Size(max = 15)
-    private String actividad;
+    @Size(min = 9)
+    private String telefono;
 
     /**
      */
-    @NotNull
-    @Size(max = 15)
-    private String descripcion;
+    @ManyToOne
+    private Usuario usuario;
+
+    /**
+     */
+    @ManyToOne
+    private Direccion direccion;
+
+    /**
+     */
+    @ManyToOne
+    private OfertaTrabajo oferta;
 }

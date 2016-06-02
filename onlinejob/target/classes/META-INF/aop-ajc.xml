@@ -1,0 +1,43 @@
+<aspectj>
+<aspects>
+<aspect name="es.uca.iw.onlinejob.domain.Direccion_Roo_Configurable"/>
+<aspect name="es.uca.iw.onlinejob.domain.Demandante_Roo_Configurable"/>
+<aspect name="es.uca.iw.onlinejob.domain.Demandante_Roo_Jpa_Entity"/>
+<aspect name="es.uca.iw.onlinejob.domain.Perfil_Roo_Configurable"/>
+<aspect name="es.uca.iw.onlinejob.domain.Perfil_Roo_JavaBean"/>
+<aspect name="es.uca.iw.onlinejob.domain.OfertaTrabajo_Roo_Configurable"/>
+<aspect name="es.uca.iw.onlinejob.domain.Perfil_Roo_Jpa_ActiveRecord"/>
+<aspect name="es.uca.iw.onlinejob.domain.Usuario_Roo_Jpa_Entity"/>
+<aspect name="es.uca.iw.onlinejob.web.DireccionController_Roo_Controller"/>
+<aspect name="es.uca.iw.onlinejob.domain.Usuario_Roo_ToString"/>
+<aspect name="es.uca.iw.onlinejob.domain.Empresa_Roo_Configurable"/>
+<aspect name="es.uca.iw.onlinejob.web.OfertaTrabajoController_Roo_Controller"/>
+<aspect name="es.uca.iw.onlinejob.web.UsuarioController_Roo_GvNIXDatatables"/>
+<aspect name="es.uca.iw.onlinejob.domain.Perfil_Roo_Jpa_Entity"/>
+<aspect name="es.uca.iw.onlinejob.web.DemandanteController_Roo_Controller"/>
+<aspect name="es.uca.iw.onlinejob.web.UsuarioController_Roo_Controller"/>
+<aspect name="es.uca.iw.onlinejob.domain.Usuario_Roo_JavaBean"/>
+<aspect name="es.uca.iw.onlinejob.domain.Empresa_Roo_ToString"/>
+<aspect name="es.uca.iw.onlinejob.domain.Direccion_Roo_Jpa_ActiveRecord"/>
+<aspect name="es.uca.iw.onlinejob.domain.Empresa_Roo_Jpa_Entity"/>
+<aspect name="es.uca.iw.onlinejob.domain.Usuario_Roo_Configurable"/>
+<aspect name="es.uca.iw.onlinejob.domain.OfertaTrabajo_Roo_JavaBean"/>
+<aspect name="es.uca.iw.onlinejob.domain.Usuario_Roo_Jpa_ActiveRecord"/>
+<aspect name="es.uca.iw.onlinejob.web.ApplicationConversionServiceFactoryBean_Roo_ConversionService"/>
+<aspect name="es.uca.iw.onlinejob.domain.Perfil_Roo_ToString"/>
+<aspect name="es.uca.iw.onlinejob.domain.Empresa_Roo_JavaBean"/>
+<aspect name="es.uca.iw.onlinejob.domain.Demandante_Roo_JavaBean"/>
+<aspect name="es.uca.iw.onlinejob.web.EmpresaController_Roo_Controller"/>
+<aspect name="es.uca.iw.onlinejob.domain.OfertaTrabajo_Roo_Jpa_Entity"/>
+<aspect name="es.uca.iw.onlinejob.web.PerfilController_Roo_Controller"/>
+<aspect name="es.uca.iw.onlinejob.domain.Direccion_Roo_Jpa_Entity"/>
+<aspect name="es.uca.iw.onlinejob.domain.Demandante_Roo_ToString"/>
+<aspect name="es.uca.iw.onlinejob.domain.OfertaTrabajo_Roo_ToString"/>
+<aspect name="es.uca.iw.onlinejob.domain.OfertaTrabajo_Roo_Jpa_ActiveRecord"/>
+<aspect name="es.uca.iw.onlinejob.domain.Direccion_Roo_ToString"/>
+<aspect name="es.uca.iw.onlinejob.domain.Demandante_Roo_Jpa_ActiveRecord"/>
+<aspect name="es.uca.iw.onlinejob.domain.Direccion_Roo_JavaBean"/>
+<aspect name="es.uca.iw.onlinejob.domain.Empresa_Roo_Jpa_ActiveRecord"/>
+</aspects>
+</aspectj>
+
