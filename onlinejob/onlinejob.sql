@@ -25,6 +25,8 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 CREATE DATABASE IF NOT EXISTS `onlinejob`;
+CREATE USER `admin`@`localhost` IDENTIFIED BY `admin`;
+GRANT ALL PRIVILEGES ON * . * TO `admin`@`localhost`;
 USE `onlinejob`;
 
 
