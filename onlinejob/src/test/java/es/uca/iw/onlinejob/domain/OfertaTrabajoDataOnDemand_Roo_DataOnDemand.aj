@@ -3,19 +3,21 @@
 
 package es.uca.iw.onlinejob.domain;
 
+import es.uca.iw.onlinejob.domain.CiudadDataOnDemand;
 import es.uca.iw.onlinejob.domain.OfertaTrabajo;
 import es.uca.iw.onlinejob.domain.OfertaTrabajoDataOnDemand;
-import es.uca.iw.onlinejob.reference.EstadoEmpleo;
+import es.uca.iw.onlinejob.domain.Trabajo;
+import es.uca.iw.onlinejob.domain.TrabajoDataOnDemand;
+import es.uca.iw.onlinejob.reference.EstadoOferta;
+import es.uca.iw.onlinejob.reference.TipoContrato;
 import java.security.SecureRandom;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 privileged aspect OfertaTrabajoDataOnDemand_Roo_DataOnDemand {
@@ -26,66 +28,51 @@ privileged aspect OfertaTrabajoDataOnDemand_Roo_DataOnDemand {
     
     private List<OfertaTrabajo> OfertaTrabajoDataOnDemand.data;
     
+    @Autowired
+    CiudadDataOnDemand OfertaTrabajoDataOnDemand.ciudadDataOnDemand;
+    
+    @Autowired
+    TrabajoDataOnDemand OfertaTrabajoDataOnDemand.trabajoDataOnDemand;
+    
     public OfertaTrabajo OfertaTrabajoDataOnDemand.getNewTransientOfertaTrabajo(int index) {
         OfertaTrabajo obj = new OfertaTrabajo();
-        setEstado_empleo(obj, index);
-        setExperiencia_previa(obj, index);
-        setFecha_inicio(obj, index);
-        setFormacion(obj, index);
-        setNum_vacantes(obj, index);
-        setPerfil(obj, index);
-        setSueldo_bruto(obj, index);
+        setDuracion(obj, index);
+        setEstado(obj, index);
+        setNombre_puesto(obj, index);
+        setSalario(obj, index);
         setTipologia_contrato(obj, index);
+        setVacantes(obj, index);
         return obj;
     }
     
-    public void OfertaTrabajoDataOnDemand.setEstado_empleo(OfertaTrabajo obj, int index) {
-        EstadoEmpleo estado_empleo = EstadoEmpleo.class.getEnumConstants()[0];
-        obj.setEstado_empleo(estado_empleo);
+    public void OfertaTrabajoDataOnDemand.setDuracion(OfertaTrabajo obj, int index) {
+        String duracion = "duracion_" + index;
+        obj.setDuracion(duracion);
     }
     
-    public void OfertaTrabajoDataOnDemand.setExperiencia_previa(OfertaTrabajo obj, int index) {
-        String experiencia_previa = "experiencia_previa_" + index;
-        obj.setExperiencia_previa(experiencia_previa);
+    public void OfertaTrabajoDataOnDemand.setEstado(OfertaTrabajo obj, int index) {
+        EstadoOferta estado = EstadoOferta.class.getEnumConstants()[0];
+        obj.setEstado(estado);
     }
     
-    public void OfertaTrabajoDataOnDemand.setFecha_inicio(OfertaTrabajo obj, int index) {
-        Date fecha_inicio = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
-        obj.setFecha_inicio(fecha_inicio);
+    public void OfertaTrabajoDataOnDemand.setNombre_puesto(OfertaTrabajo obj, int index) {
+        Trabajo nombre_puesto = trabajoDataOnDemand.getRandomTrabajo();
+        obj.setNombre_puesto(nombre_puesto);
     }
     
-    public void OfertaTrabajoDataOnDemand.setFormacion(OfertaTrabajo obj, int index) {
-        String formacion = "formacion_" + index;
-        if (formacion.length() > 32) {
-            formacion = formacion.substring(0, 32);
-        }
-        obj.setFormacion(formacion);
-    }
-    
-    public void OfertaTrabajoDataOnDemand.setNum_vacantes(OfertaTrabajo obj, int index) {
-        String num_vacantes = "num_vacantes_" + index;
-        obj.setNum_vacantes(num_vacantes);
-    }
-    
-    public void OfertaTrabajoDataOnDemand.setPerfil(OfertaTrabajo obj, int index) {
-        String perfil = "perfil_" + index;
-        if (perfil.length() > 256) {
-            perfil = perfil.substring(0, 256);
-        }
-        obj.setPerfil(perfil);
-    }
-    
-    public void OfertaTrabajoDataOnDemand.setSueldo_bruto(OfertaTrabajo obj, int index) {
-        Float sueldo_bruto = new Integer(index).floatValue();
-        obj.setSueldo_bruto(sueldo_bruto);
+    public void OfertaTrabajoDataOnDemand.setSalario(OfertaTrabajo obj, int index) {
+        double salario = new Integer(index).doubleValue();
+        obj.setSalario(salario);
     }
     
     public void OfertaTrabajoDataOnDemand.setTipologia_contrato(OfertaTrabajo obj, int index) {
-        String tipologia_contrato = "tipologia_contrato_" + index;
-        if (tipologia_contrato.length() > 32) {
-            tipologia_contrato = tipologia_contrato.substring(0, 32);
-        }
+        TipoContrato tipologia_contrato = TipoContrato.class.getEnumConstants()[0];
         obj.setTipologia_contrato(tipologia_contrato);
+    }
+    
+    public void OfertaTrabajoDataOnDemand.setVacantes(OfertaTrabajo obj, int index) {
+        int vacantes = index;
+        obj.setVacantes(vacantes);
     }
     
     public OfertaTrabajo OfertaTrabajoDataOnDemand.getSpecificOfertaTrabajo(int index) {

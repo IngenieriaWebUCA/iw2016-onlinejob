@@ -3,17 +3,19 @@
 
 package es.uca.iw.onlinejob.web;
 
-import es.uca.iw.onlinejob.domain.Demandante;
-import es.uca.iw.onlinejob.domain.Empresa;
+import es.uca.iw.onlinejob.domain.Ciudad;
+import es.uca.iw.onlinejob.domain.Inscripcion;
 import es.uca.iw.onlinejob.domain.OfertaTrabajo;
-import es.uca.iw.onlinejob.reference.EstadoEmpleo;
+import es.uca.iw.onlinejob.domain.Trabajo;
+import es.uca.iw.onlinejob.reference.EstadoOferta;
+import es.uca.iw.onlinejob.reference.TipoContrato;
 import es.uca.iw.onlinejob.web.OfertaTrabajoController;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,12 +41,16 @@ privileged aspect OfertaTrabajoController_Roo_Controller {
     @RequestMapping(params = "form", produces = "text/html")
     public String OfertaTrabajoController.createForm(Model uiModel) {
         populateEditForm(uiModel, new OfertaTrabajo());
+        List<String[]> dependencies = new ArrayList<String[]>();
+        if (Trabajo.countTrabajoes() == 0) {
+            dependencies.add(new String[] { "nombre_puesto", "trabajoes" });
+        }
+        uiModel.addAttribute("dependencies", dependencies);
         return "ofertatrabajoes/create";
     }
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String OfertaTrabajoController.show(@PathVariable("id") Long id, Model uiModel) {
-        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("ofertatrabajo", OfertaTrabajo.findOfertaTrabajo(id));
         uiModel.addAttribute("itemId", id);
         return "ofertatrabajoes/show";
@@ -61,7 +67,6 @@ privileged aspect OfertaTrabajoController_Roo_Controller {
         } else {
             uiModel.addAttribute("ofertatrabajoes", OfertaTrabajo.findAllOfertaTrabajoes(sortFieldName, sortOrder));
         }
-        addDateTimeFormatPatterns(uiModel);
         return "ofertatrabajoes/list";
     }
     
@@ -92,16 +97,13 @@ privileged aspect OfertaTrabajoController_Roo_Controller {
         return "redirect:/ofertatrabajoes";
     }
     
-    void OfertaTrabajoController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("ofertaTrabajo_fecha_inicio_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-    }
-    
     void OfertaTrabajoController.populateEditForm(Model uiModel, OfertaTrabajo ofertaTrabajo) {
         uiModel.addAttribute("ofertaTrabajo", ofertaTrabajo);
-        addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("demandantes", Demandante.findAllDemandantes());
-        uiModel.addAttribute("empresas", Empresa.findAllEmpresas());
-        uiModel.addAttribute("estadoempleos", Arrays.asList(EstadoEmpleo.values()));
+        uiModel.addAttribute("ciudads", Ciudad.findAllCiudads());
+        uiModel.addAttribute("inscripcions", Inscripcion.findAllInscripcions());
+        uiModel.addAttribute("trabajoes", Trabajo.findAllTrabajoes());
+        uiModel.addAttribute("estadoofertas", Arrays.asList(EstadoOferta.values()));
+        uiModel.addAttribute("tipocontratoes", Arrays.asList(TipoContrato.values()));
     }
     
     String OfertaTrabajoController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

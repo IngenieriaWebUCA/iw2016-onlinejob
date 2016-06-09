@@ -2,85 +2,59 @@ package es.uca.iw.onlinejob.domain;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import javax.validation.constraints.Min;
-import java.util.Date;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import org.springframework.format.annotation.DateTimeFormat;
-import es.uca.iw.onlinejob.reference.EstadoEmpleo;
+import es.uca.iw.onlinejob.reference.TipoContrato;
 import javax.persistence.Enumerated;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
-import javax.persistence.ManyToMany;
+import es.uca.iw.onlinejob.reference.EstadoOferta;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord
+@RooJpaActiveRecord(sequenceName = "OFE_SEQ", finders = { "findOfertaTrabajoesByInscritos", "findOfertaTrabajoesByNombre_puesto", "findOfertaTrabajoesBySalario", "findOfertaTrabajoesByLocalizacion" })
 public class OfertaTrabajo {
 
     /**
      */
     @NotNull
-    @Size(min = 3, max = 32)
-    private String tipologia_contrato;
+    @ManyToOne
+    private Trabajo nombre_puesto;
+
+    /**
+     */
+    private double salario;
 
     /**
      */
     @NotNull
-    @Min(0L)
-    private Float sueldo_bruto;
-
-    /**
-     */
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    private Date fecha_inicio;
-
-    /**
-     */
-    @NotNull
-    private String num_vacantes;
-
-    /**
-     */
-    @NotNull
-    @Size(max = 256)
-    private String perfil;
-
-    /**
-     */
-    @NotNull
-    @Size(min = 3, max = 32)
-    private String formacion;
-
-    /**
-     */
-    @NotNull
-    private String experiencia_previa;
-
-    /**
-     */
     @Enumerated
-    private EstadoEmpleo estado_empleo;
+    private TipoContrato tipologia_contrato;
+
+    /**
+     */
+    private String duracion;
+
+    /**
+     */
+    @NotNull
+    private int vacantes;
+
+    /**
+     */
+    @ManyToOne
+    private Ciudad localizacion;
 
     /**
      */
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "oferta")
-    private Set<Empresa> id_ofertaEmpresa = new HashSet<Empresa>();
-
-    /**
-     */
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "ofertademandante")
-    private Set<Demandante> id_oferta_demandante = new HashSet<Demandante>();
+    private Set<Inscripcion> inscritos = new HashSet<Inscripcion>();
 
     /**
      */
     @NotNull
-    @Size(min = 3, max = 30)
-    private String nombre;
+    @Enumerated
+    private EstadoOferta estado;
 }

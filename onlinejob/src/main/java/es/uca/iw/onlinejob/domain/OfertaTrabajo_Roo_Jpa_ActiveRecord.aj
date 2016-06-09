@@ -14,7 +14,7 @@ privileged aspect OfertaTrabajo_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager OfertaTrabajo.entityManager;
     
-    public static final List<String> OfertaTrabajo.fieldNames4OrderClauseFilter = java.util.Arrays.asList("tipologia_contrato", "sueldo_bruto", "fecha_inicio", "num_vacantes", "perfil", "formacion", "experiencia_previa", "estado_empleo", "id_ofertaEmpresa", "id_oferta_demandante", "nombre");
+    public static final List<String> OfertaTrabajo.fieldNames4OrderClauseFilter = java.util.Arrays.asList("nombre_puesto", "salario", "tipologia_contrato", "duracion", "vacantes", "localizacion", "inscritos", "estado");
     
     public static final EntityManager OfertaTrabajo.entityManager() {
         EntityManager em = new OfertaTrabajo().entityManager;

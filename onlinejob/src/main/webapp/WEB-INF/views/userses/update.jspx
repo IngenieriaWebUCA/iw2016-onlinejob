@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_es_uca_iw_onlinejob_domain_Users" modelAttribute="users" path="/userses" versionField="Version" z="VsQ2nJGTf7+wZ0/rz80+mTEy6EM=">
+        <field:checkbox field="activado" id="c_es_uca_iw_onlinejob_domain_Users_activado" z="ybBVtLJKuyHOWhYB1FK7oTGca1E="/>
+        <field:input field="apellidos" id="c_es_uca_iw_onlinejob_domain_Users_apellidos" required="true" z="F+FgMc2aB/wUBGoTnforxNfEos8="/>
+        <field:input field="dni" id="c_es_uca_iw_onlinejob_domain_Users_dni" max="9" min="9" required="true" z="LL0y5d4zJORKzCAhcI/lMYn0fuQ="/>
+        <field:input field="email" id="c_es_uca_iw_onlinejob_domain_Users_email" required="true" validationMessageCode="field_invalid_email" z="UpFvyrH4hZVMdwnD1Gv/22ujbt0="/>
+        <field:datetime dateTimePattern="${users_fecha_registro_date_format}" field="fecha_registro" id="c_es_uca_iw_onlinejob_domain_Users_fecha_registro" required="true" z="6O1W+yAAu9/8clMFbiv8stD668Y="/>
+        <field:input field="nombre" id="c_es_uca_iw_onlinejob_domain_Users_nombre" required="true" z="BofXJNt4zJw7GfL1S1w1Sb4iy38="/>
+        <field:input field="password" id="c_es_uca_iw_onlinejob_domain_Users_password" required="true" z="3vDPaw42Qpy5pOrtY+n14b+jOUM="/>
+        <field:select field="sexo" id="c_es_uca_iw_onlinejob_domain_Users_sexo" items="${sexoes}" path="sexoes" required="true" z="0Srj+EnnkDKyVV0CvguCkNHhXMI="/>
+        <field:select field="rol" id="c_es_uca_iw_onlinejob_domain_Users_rol" itemValue="id" items="${roleses}" path="/roleses" required="true" z="EAk+mZyQKzhmrODtmzWE58UVR5k="/>
+        <field:input field="usuario" id="c_es_uca_iw_onlinejob_domain_Users_usuario" required="true" z="aKtuE/BNVs12VOoxxQRddwIU7bk="/>
+    </form:update>
+</div>

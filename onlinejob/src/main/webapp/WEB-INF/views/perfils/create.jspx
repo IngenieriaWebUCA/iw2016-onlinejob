@@ -3,17 +3,9 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_es_uca_iw_onlinejob_domain_Perfil" modelAttribute="perfil" path="/perfils" render="${empty dependencies}" z="p0GQIzBeT69+/e08COLId0mIJXM=">
-        <field:textarea field="trayectoria" id="c_es_uca_iw_onlinejob_domain_Perfil_trayectoria" z="o/btpAtYG/0zXlLKFMMRxZwBVkA="/>
-        <field:input field="foto" id="c_es_uca_iw_onlinejob_domain_Perfil_foto" z="1oPAro62DZT1tike+3rhDh9XM+I="/>
-        <field:textarea field="lista_puesto_trabajo" id="c_es_uca_iw_onlinejob_domain_Perfil_lista_puesto_trabajo" z="K3MQ5raQKbwX8NQJHBENqECZGQM="/>
-        <field:textarea field="titulo_academico" id="c_es_uca_iw_onlinejob_domain_Perfil_titulo_academico" required="true" z="pPWx/n4xXhQ6ycgn2M/Aw/MQkX0="/>
-        <field:textarea field="curso_especializacion" id="c_es_uca_iw_onlinejob_domain_Perfil_curso_especializacion" z="k6pDrRfgo6Ug4bGWUtyQl2DaKaY="/>
-        <field:textarea field="idioma" id="c_es_uca_iw_onlinejob_domain_Perfil_idioma" z="iNh6BO5K3HIoTbej9VdURzXVpPo="/>
-        <field:textarea field="nombre_empresa" id="c_es_uca_iw_onlinejob_domain_Perfil_nombre_empresa" z="fhJZ6nRyo7jr9lP0bHwScy2Br6o="/>
-        <field:datetime dateTimePattern="${perfil_fecha_inicio_date_format}" field="fecha_inicio" id="c_es_uca_iw_onlinejob_domain_Perfil_fecha_inicio" past="true" required="true" z="WvhIuiGq+uhxPU/9NXZ3QfVzYoA="/>
-        <field:datetime dateTimePattern="${perfil_fecha_fin_date_format}" field="fecha_fin" id="c_es_uca_iw_onlinejob_domain_Perfil_fecha_fin" z="Ah0z/z4LC73p8NQNtRr3OyCO3Ws="/>
-        <field:textarea field="puesto_trabajo_desempenado" id="c_es_uca_iw_onlinejob_domain_Perfil_puesto_trabajo_desempenado" z="ap+5W5IB1Vka3esTHFNOFDtULew="/>
-        <field:simple field="id_perfil" id="c_es_uca_iw_onlinejob_domain_Perfil_id_perfil" messageCode="entity_reference_not_managed" messageCodeAttribute="Demandante" z="Yfh4rj5kDP1hMbrz8Sy3QChsyKo="/>
+        <field:select field="titulos" id="c_es_uca_iw_onlinejob_domain_Perfil_titulos" itemValue="id" items="${tituloes}" multiple="true" path="/tituloes" z="hFAVkp+wIcnlcgzVyu3Jgx3sML8="/>
+        <field:select field="trabajos" id="c_es_uca_iw_onlinejob_domain_Perfil_trabajos" itemValue="id" items="${trabajoes}" multiple="true" path="/trabajoes" z="uJOuUdOprjjLnSGbcfPxacZe+Wk="/>
+        <field:textarea field="experiencia" id="c_es_uca_iw_onlinejob_domain_Perfil_experiencia" required="true" z="1COIYS/5kM3LIXRRh4BmsDQ0XCY="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_onlinejob_domain_Perfil" render="${not empty dependencies}" z="xQ4Y2Mmk+6VUJ152ct68nOmKc/s="/>
 </div>

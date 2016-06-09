@@ -4,12 +4,12 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_onlinejob_domain_Empresa" items="${empresas}" z="/612WBfEP0byzUy1OqaNDvq+x1c=">
         <table:table data="${empresas}" id="l_es_uca_iw_onlinejob_domain_Empresa" path="/empresas" z="4uxfENNNY0Uk/XkMlVJg4ekX7rc=">
-            <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_nombre" property="nombre" z="AuOlIDUgkj1J+m6cqYOpZXhdQcE="/>
             <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_cif" property="cif" z="zsou/5fNWAMMRCMwQkuIHxaBMBw="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_nombre" property="nombre" z="AuOlIDUgkj1J+m6cqYOpZXhdQcE="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_actividad" property="actividad" z="C48XjA103l7z3U7bkREKDv1hD3E="/>
             <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_email" property="email" z="xe5Urki5jcjOH9GmV5w/GfzT578="/>
-            <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_actividad_profesional" property="actividad_profesional" z="g/5WL4LgAeJRkbbEZG1tNnYQGa4="/>
-            <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_num_empleados" property="num_empleados" z="Af4Q0Zxp6SaKm5QfmY/WlxAC1MQ="/>
-            <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_telefono" property="telefono" z="R7ywYeFsC6NyDHOh/s5CB8v2KG8="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_empleados" property="empleados" z="0AxW8ltdftgbPfPp3c4SQCh5DX4="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Empresa_ciudades" property="ciudades" z="z6X6aX6j3kFyOTHBoaNOZEjYmCc="/>
         </table:table>
     </page:list>
 </div>

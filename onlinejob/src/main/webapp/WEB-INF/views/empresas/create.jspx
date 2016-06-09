@@ -3,15 +3,14 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_es_uca_iw_onlinejob_domain_Empresa" modelAttribute="empresa" path="/empresas" render="${empty dependencies}" z="e0QPPg7YgUGk1sfisSjnaZuMdas=">
-        <field:textarea field="nombre" id="c_es_uca_iw_onlinejob_domain_Empresa_nombre" required="true" z="qvWwkmWmzCUsFfujyfqi7tjs4iI="/>
         <field:input field="cif" id="c_es_uca_iw_onlinejob_domain_Empresa_cif" max="9" min="9" required="true" z="7eenMjf6SdoYNZwhZEn57E2Wobs="/>
-        <field:textarea field="email" id="c_es_uca_iw_onlinejob_domain_Empresa_email" validationMessageCode="field_invalid_email" z="WIUOQjKkR0GguKDVMdxrCQ9kPz8="/>
-        <field:textarea field="actividad_profesional" id="c_es_uca_iw_onlinejob_domain_Empresa_actividad_profesional" z="jD/JPdsI7dxdH0df3PmBrBT97hU="/>
-        <field:input field="num_empleados" id="c_es_uca_iw_onlinejob_domain_Empresa_num_empleados" min="0" required="true" validationMessageCode="field_invalid_number" z="YsjjeMZFdprjR5D6TC3nXgN7ad8="/>
-        <field:input field="telefono" id="c_es_uca_iw_onlinejob_domain_Empresa_telefono" min="9" required="true" z="ylwS7SEVmqTLFBQCdeJJyDljSUU="/>
-        <field:select field="usuario" id="c_es_uca_iw_onlinejob_domain_Empresa_usuario" itemValue="id" items="${usuarios}" path="/usuarios" z="9OHFUfD0EyM9C9XYwFvbUQ9EcV8="/>
-        <field:select field="direccion" id="c_es_uca_iw_onlinejob_domain_Empresa_direccion" itemValue="id" items="${direccions}" path="/direccions" z="3ovpvzy8b5DWUy9Dt6JcNK+FLvA="/>
-        <field:select field="oferta" id="c_es_uca_iw_onlinejob_domain_Empresa_oferta" itemValue="id" items="${ofertatrabajoes}" path="/ofertatrabajoes" z="/ptNQmGodssc2EC7+d2weUQ60pQ="/>
+        <field:input field="nombre" id="c_es_uca_iw_onlinejob_domain_Empresa_nombre" min="2" required="true" z="GXRAW+qCC+Ij6bZChP+Ws2D/yuY="/>
+        <field:input field="actividad" id="c_es_uca_iw_onlinejob_domain_Empresa_actividad" required="true" z="yuVysfNbbfqkagZMZJpL0lOYtoY="/>
+        <field:input field="email" id="c_es_uca_iw_onlinejob_domain_Empresa_email" required="true" validationMessageCode="field_invalid_email" z="puMM/14KSx6Xev/j3llK7cedVGw="/>
+        <field:input field="empleados" id="c_es_uca_iw_onlinejob_domain_Empresa_empleados" required="true" z="WorwkpyKbs0adQYQHmxw72s0Y6w="/>
+        <field:select field="ciudades" id="c_es_uca_iw_onlinejob_domain_Empresa_ciudades" itemValue="id" items="${ciudads}" multiple="true" path="/ciudads" z="B5nk0JQmnBgp4BlFepFxN617myw="/>
+        <field:select field="usuario" id="c_es_uca_iw_onlinejob_domain_Empresa_usuario" itemValue="id" items="${userses}" path="/userses" z="YzpsWsKCHTegzJaYxNmlFKPoWV4="/>
+        <field:simple field="ofertas" id="c_es_uca_iw_onlinejob_domain_Empresa_ofertas" messageCode="entity_reference_not_managed" messageCodeAttribute="Oferta Trabajo" z="/T/Ux5ZaUdR38LGr+dRjv4Yg6k4="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_onlinejob_domain_Empresa" render="${not empty dependencies}" z="jGVZ9/qo2N3s/kDPWRvuGgvBSH4="/>
 </div>

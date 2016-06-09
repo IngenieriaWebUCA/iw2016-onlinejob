@@ -4,12 +4,8 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_onlinejob_domain_Demandante" items="${demandantes}" z="ptCSgtSXQdJ75BLQNZ1G9zxdCY4=">
         <table:table data="${demandantes}" id="l_es_uca_iw_onlinejob_domain_Demandante" path="/demandantes" z="sLecV5MUjKeabag61pRwTZPyP+g=">
-            <table:column id="c_es_uca_iw_onlinejob_domain_Demandante_dni" property="dni" z="U2M9Vaeh3adjOtdv/4dXORlGvKs="/>
-            <table:column id="c_es_uca_iw_onlinejob_domain_Demandante_nombre" property="nombre" z="eCmoxzxPwd4NQaJCN6Z2PIBiwPk="/>
-            <table:column date="true" dateTimePattern="${demandante_fecha_nacimiento_date_format}" id="c_es_uca_iw_onlinejob_domain_Demandante_fecha_nacimiento" property="fecha_nacimiento" z="myqo3ahM5W4SuwenxvZ+b+0ovGs="/>
-            <table:column id="c_es_uca_iw_onlinejob_domain_Demandante_sexo" property="sexo" z="0Qg3wK1AWmDhDVAypvbK29/K15A="/>
-            <table:column id="c_es_uca_iw_onlinejob_domain_Demandante_direccion" property="direccion" z="a/gkPyCoriSp/02M/c9+UJnkteU="/>
-            <table:column id="c_es_uca_iw_onlinejob_domain_Demandante_email" property="email" z="QbJiQdci2iPvGNvaEbHOVjhUxhw="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Demandante_perfil" property="perfil" z="KWUhEX+wkC7sK0Y+wnHMtEpgZy4="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Demandante_usuario" property="usuario" z="XB/QVVMIRnZleAiKSRFwvw/gk6I="/>
         </table:table>
     </page:list>
 </div>

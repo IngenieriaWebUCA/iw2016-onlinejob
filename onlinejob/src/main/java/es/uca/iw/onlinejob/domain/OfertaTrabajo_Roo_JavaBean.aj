@@ -3,101 +3,78 @@
 
 package es.uca.iw.onlinejob.domain;
 
-import es.uca.iw.onlinejob.domain.Demandante;
-import es.uca.iw.onlinejob.domain.Empresa;
+import es.uca.iw.onlinejob.domain.Ciudad;
+import es.uca.iw.onlinejob.domain.Inscripcion;
 import es.uca.iw.onlinejob.domain.OfertaTrabajo;
-import es.uca.iw.onlinejob.reference.EstadoEmpleo;
-import java.util.Date;
+import es.uca.iw.onlinejob.domain.Trabajo;
+import es.uca.iw.onlinejob.reference.EstadoOferta;
+import es.uca.iw.onlinejob.reference.TipoContrato;
 import java.util.Set;
 
 privileged aspect OfertaTrabajo_Roo_JavaBean {
     
-    public String OfertaTrabajo.getTipologia_contrato() {
+    public Trabajo OfertaTrabajo.getNombre_puesto() {
+        return this.nombre_puesto;
+    }
+    
+    public void OfertaTrabajo.setNombre_puesto(Trabajo nombre_puesto) {
+        this.nombre_puesto = nombre_puesto;
+    }
+    
+    public double OfertaTrabajo.getSalario() {
+        return this.salario;
+    }
+    
+    public void OfertaTrabajo.setSalario(double salario) {
+        this.salario = salario;
+    }
+    
+    public TipoContrato OfertaTrabajo.getTipologia_contrato() {
         return this.tipologia_contrato;
     }
     
-    public void OfertaTrabajo.setTipologia_contrato(String tipologia_contrato) {
+    public void OfertaTrabajo.setTipologia_contrato(TipoContrato tipologia_contrato) {
         this.tipologia_contrato = tipologia_contrato;
     }
     
-    public Float OfertaTrabajo.getSueldo_bruto() {
-        return this.sueldo_bruto;
+    public String OfertaTrabajo.getDuracion() {
+        return this.duracion;
     }
     
-    public void OfertaTrabajo.setSueldo_bruto(Float sueldo_bruto) {
-        this.sueldo_bruto = sueldo_bruto;
+    public void OfertaTrabajo.setDuracion(String duracion) {
+        this.duracion = duracion;
     }
     
-    public Date OfertaTrabajo.getFecha_inicio() {
-        return this.fecha_inicio;
+    public int OfertaTrabajo.getVacantes() {
+        return this.vacantes;
     }
     
-    public void OfertaTrabajo.setFecha_inicio(Date fecha_inicio) {
-        this.fecha_inicio = fecha_inicio;
+    public void OfertaTrabajo.setVacantes(int vacantes) {
+        this.vacantes = vacantes;
     }
     
-    public String OfertaTrabajo.getNum_vacantes() {
-        return this.num_vacantes;
+    public Ciudad OfertaTrabajo.getLocalizacion() {
+        return this.localizacion;
     }
     
-    public void OfertaTrabajo.setNum_vacantes(String num_vacantes) {
-        this.num_vacantes = num_vacantes;
+    public void OfertaTrabajo.setLocalizacion(Ciudad localizacion) {
+        this.localizacion = localizacion;
     }
     
-    public String OfertaTrabajo.getPerfil() {
-        return this.perfil;
+    public Set<Inscripcion> OfertaTrabajo.getInscritos() {
+        return this.inscritos;
     }
     
-    public void OfertaTrabajo.setPerfil(String perfil) {
-        this.perfil = perfil;
+    public void OfertaTrabajo.setInscritos(Set<Inscripcion> inscritos) {
+        this.inscritos = inscritos;
     }
     
-    public String OfertaTrabajo.getFormacion() {
-        return this.formacion;
+    public EstadoOferta OfertaTrabajo.getEstado() {
+        return this.estado;
     }
     
-    public void OfertaTrabajo.setFormacion(String formacion) {
-        this.formacion = formacion;
-    }
-    
-    public String OfertaTrabajo.getExperiencia_previa() {
-        return this.experiencia_previa;
-    }
-    
-    public void OfertaTrabajo.setExperiencia_previa(String experiencia_previa) {
-        this.experiencia_previa = experiencia_previa;
-    }
-    
-    public EstadoEmpleo OfertaTrabajo.getEstado_empleo() {
-        return this.estado_empleo;
-    }
-    
-    public void OfertaTrabajo.setEstado_empleo(EstadoEmpleo estado_empleo) {
-        this.estado_empleo = estado_empleo;
-    }
-    
-    public Set<Empresa> OfertaTrabajo.getId_ofertaEmpresa() {
-        return this.id_ofertaEmpresa;
-    }
-    
-    public void OfertaTrabajo.setId_ofertaEmpresa(Set<Empresa> id_ofertaEmpresa) {
-        this.id_ofertaEmpresa = id_ofertaEmpresa;
-    }
-    
-    public Set<Demandante> OfertaTrabajo.getId_oferta_demandante() {
-        return this.id_oferta_demandante;
-    }
-    
-    public void OfertaTrabajo.setId_oferta_demandante(Set<Demandante> id_oferta_demandante) {
-        this.id_oferta_demandante = id_oferta_demandante;
-    }
-    
-    public String OfertaTrabajo.getNombre() {
-        return this.nombre;
-    }
-    
-    public void OfertaTrabajo.setNombre(String nombre) {
-        this.nombre = nombre;
+    public void OfertaTrabajo.setEstado(EstadoOferta estado) {
+        this.estado = estado;
     }
     
 }

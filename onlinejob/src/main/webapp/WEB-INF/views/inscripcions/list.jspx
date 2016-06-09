@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_es_uca_iw_onlinejob_domain_Inscripcion" items="${inscripcions}" z="El59dF93jYPpZXn6m3ZyxJH62eI=">
+        <table:table data="${inscripcions}" id="l_es_uca_iw_onlinejob_domain_Inscripcion" path="/inscripcions" z="55xYi10CKBul2r9OBseRjHoDCoA=">
+            <table:column id="c_es_uca_iw_onlinejob_domain_Inscripcion_demandante" property="demandante" z="9ratPTjkMTV91rKKmC60UIDGsc0="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Inscripcion_oferta" property="oferta" z="Qp7kbN+3/6/AZaCQv/dAthmaTUU="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Inscripcion_estado_inscripcion" property="estado_inscripcion" z="mtyF3XDIe/YSabGO+bioBA7aJWQ="/>
+            <table:column date="true" dateTimePattern="${inscripcion_fecha_inscripcion_date_format}" id="c_es_uca_iw_onlinejob_domain_Inscripcion_fecha_inscripcion" property="fecha_inscripcion" z="zacxddsPL1ADXopg89d6w7S0bgg="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Inscripcion_estado" property="estado" z="jgs9SuqH3n7EZJWkNq1E3ym/+qM="/>
+        </table:table>
+    </page:list>
+</div>

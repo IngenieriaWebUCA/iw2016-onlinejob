@@ -3,12 +3,16 @@
 
 package es.uca.iw.onlinejob.web;
 
+import es.uca.iw.onlinejob.domain.Ciudad;
 import es.uca.iw.onlinejob.domain.Demandante;
-import es.uca.iw.onlinejob.domain.Direccion;
 import es.uca.iw.onlinejob.domain.Empresa;
+import es.uca.iw.onlinejob.domain.Inscripcion;
 import es.uca.iw.onlinejob.domain.OfertaTrabajo;
 import es.uca.iw.onlinejob.domain.Perfil;
-import es.uca.iw.onlinejob.domain.Usuario;
+import es.uca.iw.onlinejob.domain.Roles;
+import es.uca.iw.onlinejob.domain.Titulo;
+import es.uca.iw.onlinejob.domain.Trabajo;
+import es.uca.iw.onlinejob.domain.Users;
 import es.uca.iw.onlinejob.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -18,10 +22,34 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
     
+    public Converter<Ciudad, String> ApplicationConversionServiceFactoryBean.getCiudadToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<es.uca.iw.onlinejob.domain.Ciudad, java.lang.String>() {
+            public String convert(Ciudad ciudad) {
+                return new StringBuilder().append(ciudad.getNombre()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Ciudad> ApplicationConversionServiceFactoryBean.getIdToCiudadConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, es.uca.iw.onlinejob.domain.Ciudad>() {
+            public es.uca.iw.onlinejob.domain.Ciudad convert(java.lang.Long id) {
+                return Ciudad.findCiudad(id);
+            }
+        };
+    }
+    
+    public Converter<String, Ciudad> ApplicationConversionServiceFactoryBean.getStringToCiudadConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.onlinejob.domain.Ciudad>() {
+            public es.uca.iw.onlinejob.domain.Ciudad convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Ciudad.class);
+            }
+        };
+    }
+    
     public Converter<Demandante, String> ApplicationConversionServiceFactoryBean.getDemandanteToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.onlinejob.domain.Demandante, java.lang.String>() {
             public String convert(Demandante demandante) {
-                return new StringBuilder().append(demandante.getDni()).append(' ').append(demandante.getNombre()).append(' ').append(demandante.getFecha_nacimiento()).append(' ').append(demandante.getSexo()).toString();
+                return "(no displayable fields)";
             }
         };
     }
@@ -42,34 +70,10 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    public Converter<Direccion, String> ApplicationConversionServiceFactoryBean.getDireccionToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<es.uca.iw.onlinejob.domain.Direccion, java.lang.String>() {
-            public String convert(Direccion direccion) {
-                return new StringBuilder().append(direccion.getNombre()).append(' ').append(direccion.getNum()).append(' ').append(direccion.getCp()).toString();
-            }
-        };
-    }
-    
-    public Converter<Long, Direccion> ApplicationConversionServiceFactoryBean.getIdToDireccionConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.Long, es.uca.iw.onlinejob.domain.Direccion>() {
-            public es.uca.iw.onlinejob.domain.Direccion convert(java.lang.Long id) {
-                return Direccion.findDireccion(id);
-            }
-        };
-    }
-    
-    public Converter<String, Direccion> ApplicationConversionServiceFactoryBean.getStringToDireccionConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.onlinejob.domain.Direccion>() {
-            public es.uca.iw.onlinejob.domain.Direccion convert(String id) {
-                return getObject().convert(getObject().convert(id, Long.class), Direccion.class);
-            }
-        };
-    }
-    
     public Converter<Empresa, String> ApplicationConversionServiceFactoryBean.getEmpresaToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.onlinejob.domain.Empresa, java.lang.String>() {
             public String convert(Empresa empresa) {
-                return new StringBuilder().append(empresa.getNombre()).append(' ').append(empresa.getCif()).append(' ').append(empresa.getEmail()).append(' ').append(empresa.getActividad_profesional()).toString();
+                return new StringBuilder().append(empresa.getCif()).append(' ').append(empresa.getNombre()).append(' ').append(empresa.getActividad()).append(' ').append(empresa.getEmail()).toString();
             }
         };
     }
@@ -90,10 +94,34 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<Inscripcion, String> ApplicationConversionServiceFactoryBean.getInscripcionToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<es.uca.iw.onlinejob.domain.Inscripcion, java.lang.String>() {
+            public String convert(Inscripcion inscripcion) {
+                return new StringBuilder().append(inscripcion.getFecha_inscripcion()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Inscripcion> ApplicationConversionServiceFactoryBean.getIdToInscripcionConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, es.uca.iw.onlinejob.domain.Inscripcion>() {
+            public es.uca.iw.onlinejob.domain.Inscripcion convert(java.lang.Long id) {
+                return Inscripcion.findInscripcion(id);
+            }
+        };
+    }
+    
+    public Converter<String, Inscripcion> ApplicationConversionServiceFactoryBean.getStringToInscripcionConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.onlinejob.domain.Inscripcion>() {
+            public es.uca.iw.onlinejob.domain.Inscripcion convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Inscripcion.class);
+            }
+        };
+    }
+    
     public Converter<OfertaTrabajo, String> ApplicationConversionServiceFactoryBean.getOfertaTrabajoToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.onlinejob.domain.OfertaTrabajo, java.lang.String>() {
             public String convert(OfertaTrabajo ofertaTrabajo) {
-                return new StringBuilder().append(ofertaTrabajo.getTipologia_contrato()).append(' ').append(ofertaTrabajo.getSueldo_bruto()).append(' ').append(ofertaTrabajo.getFecha_inicio()).append(' ').append(ofertaTrabajo.getNum_vacantes()).toString();
+                return new StringBuilder().append(ofertaTrabajo.getSalario()).append(' ').append(ofertaTrabajo.getDuracion()).append(' ').append(ofertaTrabajo.getVacantes()).toString();
             }
         };
     }
@@ -117,7 +145,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Perfil, String> ApplicationConversionServiceFactoryBean.getPerfilToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.onlinejob.domain.Perfil, java.lang.String>() {
             public String convert(Perfil perfil) {
-                return new StringBuilder().append(perfil.getTrayectoria()).append(' ').append(perfil.getFoto()).append(' ').append(perfil.getLista_puesto_trabajo()).append(' ').append(perfil.getTitulo_academico()).toString();
+                return new StringBuilder().append(perfil.getExperiencia()).toString();
             }
         };
     }
@@ -138,49 +166,133 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    public Converter<Usuario, String> ApplicationConversionServiceFactoryBean.getUsuarioToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<es.uca.iw.onlinejob.domain.Usuario, java.lang.String>() {
-            public String convert(Usuario usuario) {
-                return new StringBuilder().append(usuario.getUsername()).append(' ').append(usuario.getPassword()).append(' ').append(usuario.getFechaRegistro()).append(' ').append(usuario.getEmail()).toString();
+    public Converter<Roles, String> ApplicationConversionServiceFactoryBean.getRolesToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<es.uca.iw.onlinejob.domain.Roles, java.lang.String>() {
+            public String convert(Roles roles) {
+                return new StringBuilder().append(roles.getNombre()).toString();
             }
         };
     }
     
-    public Converter<Long, Usuario> ApplicationConversionServiceFactoryBean.getIdToUsuarioConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.Long, es.uca.iw.onlinejob.domain.Usuario>() {
-            public es.uca.iw.onlinejob.domain.Usuario convert(java.lang.Long id) {
-                return Usuario.findUsuario(id);
+    public Converter<Long, Roles> ApplicationConversionServiceFactoryBean.getIdToRolesConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, es.uca.iw.onlinejob.domain.Roles>() {
+            public es.uca.iw.onlinejob.domain.Roles convert(java.lang.Long id) {
+                return Roles.findRoles(id);
             }
         };
     }
     
-    public Converter<String, Usuario> ApplicationConversionServiceFactoryBean.getStringToUsuarioConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.onlinejob.domain.Usuario>() {
-            public es.uca.iw.onlinejob.domain.Usuario convert(String id) {
-                return getObject().convert(getObject().convert(id, Long.class), Usuario.class);
+    public Converter<String, Roles> ApplicationConversionServiceFactoryBean.getStringToRolesConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.onlinejob.domain.Roles>() {
+            public es.uca.iw.onlinejob.domain.Roles convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Roles.class);
+            }
+        };
+    }
+    
+    public Converter<Titulo, String> ApplicationConversionServiceFactoryBean.getTituloToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<es.uca.iw.onlinejob.domain.Titulo, java.lang.String>() {
+            public String convert(Titulo titulo) {
+                return new StringBuilder().append(titulo.getNombre()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Titulo> ApplicationConversionServiceFactoryBean.getIdToTituloConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, es.uca.iw.onlinejob.domain.Titulo>() {
+            public es.uca.iw.onlinejob.domain.Titulo convert(java.lang.Long id) {
+                return Titulo.findTitulo(id);
+            }
+        };
+    }
+    
+    public Converter<String, Titulo> ApplicationConversionServiceFactoryBean.getStringToTituloConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.onlinejob.domain.Titulo>() {
+            public es.uca.iw.onlinejob.domain.Titulo convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Titulo.class);
+            }
+        };
+    }
+    
+    public Converter<Trabajo, String> ApplicationConversionServiceFactoryBean.getTrabajoToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<es.uca.iw.onlinejob.domain.Trabajo, java.lang.String>() {
+            public String convert(Trabajo trabajo) {
+                return new StringBuilder().append(trabajo.getNombre()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Trabajo> ApplicationConversionServiceFactoryBean.getIdToTrabajoConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, es.uca.iw.onlinejob.domain.Trabajo>() {
+            public es.uca.iw.onlinejob.domain.Trabajo convert(java.lang.Long id) {
+                return Trabajo.findTrabajo(id);
+            }
+        };
+    }
+    
+    public Converter<String, Trabajo> ApplicationConversionServiceFactoryBean.getStringToTrabajoConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.onlinejob.domain.Trabajo>() {
+            public es.uca.iw.onlinejob.domain.Trabajo convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Trabajo.class);
+            }
+        };
+    }
+    
+    public Converter<Users, String> ApplicationConversionServiceFactoryBean.getUsersToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<es.uca.iw.onlinejob.domain.Users, java.lang.String>() {
+            public String convert(Users users) {
+                return new StringBuilder().append(users.getApellidos()).append(' ').append(users.getDni()).append(' ').append(users.getEmail()).append(' ').append(users.getFecha_registro()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Users> ApplicationConversionServiceFactoryBean.getIdToUsersConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, es.uca.iw.onlinejob.domain.Users>() {
+            public es.uca.iw.onlinejob.domain.Users convert(java.lang.Long id) {
+                return Users.findUsers(id);
+            }
+        };
+    }
+    
+    public Converter<String, Users> ApplicationConversionServiceFactoryBean.getStringToUsersConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.onlinejob.domain.Users>() {
+            public es.uca.iw.onlinejob.domain.Users convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Users.class);
             }
         };
     }
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
+        registry.addConverter(getCiudadToStringConverter());
+        registry.addConverter(getIdToCiudadConverter());
+        registry.addConverter(getStringToCiudadConverter());
         registry.addConverter(getDemandanteToStringConverter());
         registry.addConverter(getIdToDemandanteConverter());
         registry.addConverter(getStringToDemandanteConverter());
-        registry.addConverter(getDireccionToStringConverter());
-        registry.addConverter(getIdToDireccionConverter());
-        registry.addConverter(getStringToDireccionConverter());
         registry.addConverter(getEmpresaToStringConverter());
         registry.addConverter(getIdToEmpresaConverter());
         registry.addConverter(getStringToEmpresaConverter());
+        registry.addConverter(getInscripcionToStringConverter());
+        registry.addConverter(getIdToInscripcionConverter());
+        registry.addConverter(getStringToInscripcionConverter());
         registry.addConverter(getOfertaTrabajoToStringConverter());
         registry.addConverter(getIdToOfertaTrabajoConverter());
         registry.addConverter(getStringToOfertaTrabajoConverter());
         registry.addConverter(getPerfilToStringConverter());
         registry.addConverter(getIdToPerfilConverter());
         registry.addConverter(getStringToPerfilConverter());
-        registry.addConverter(getUsuarioToStringConverter());
-        registry.addConverter(getIdToUsuarioConverter());
-        registry.addConverter(getStringToUsuarioConverter());
+        registry.addConverter(getRolesToStringConverter());
+        registry.addConverter(getIdToRolesConverter());
+        registry.addConverter(getStringToRolesConverter());
+        registry.addConverter(getTituloToStringConverter());
+        registry.addConverter(getIdToTituloConverter());
+        registry.addConverter(getStringToTituloConverter());
+        registry.addConverter(getTrabajoToStringConverter());
+        registry.addConverter(getIdToTrabajoConverter());
+        registry.addConverter(getStringToTrabajoConverter());
+        registry.addConverter(getUsersToStringConverter());
+        registry.addConverter(getIdToUsersConverter());
+        registry.addConverter(getStringToUsersConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

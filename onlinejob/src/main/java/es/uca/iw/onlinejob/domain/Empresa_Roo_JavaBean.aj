@@ -3,12 +3,21 @@
 
 package es.uca.iw.onlinejob.domain;
 
-import es.uca.iw.onlinejob.domain.Direccion;
+import es.uca.iw.onlinejob.domain.Ciudad;
 import es.uca.iw.onlinejob.domain.Empresa;
 import es.uca.iw.onlinejob.domain.OfertaTrabajo;
-import es.uca.iw.onlinejob.domain.Usuario;
+import es.uca.iw.onlinejob.domain.Users;
+import java.util.Set;
 
 privileged aspect Empresa_Roo_JavaBean {
+    
+    public String Empresa.getCif() {
+        return this.cif;
+    }
+    
+    public void Empresa.setCif(String cif) {
+        this.cif = cif;
+    }
     
     public String Empresa.getNombre() {
         return this.nombre;
@@ -18,12 +27,12 @@ privileged aspect Empresa_Roo_JavaBean {
         this.nombre = nombre;
     }
     
-    public String Empresa.getCif() {
-        return this.cif;
+    public String Empresa.getActividad() {
+        return this.actividad;
     }
     
-    public void Empresa.setCif(String cif) {
-        this.cif = cif;
+    public void Empresa.setActividad(String actividad) {
+        this.actividad = actividad;
     }
     
     public String Empresa.getEmail() {
@@ -34,52 +43,36 @@ privileged aspect Empresa_Roo_JavaBean {
         this.email = email;
     }
     
-    public String Empresa.getActividad_profesional() {
-        return this.actividad_profesional;
+    public String Empresa.getEmpleados() {
+        return this.empleados;
     }
     
-    public void Empresa.setActividad_profesional(String actividad_profesional) {
-        this.actividad_profesional = actividad_profesional;
+    public void Empresa.setEmpleados(String empleados) {
+        this.empleados = empleados;
     }
     
-    public Float Empresa.getNum_empleados() {
-        return this.num_empleados;
+    public Set<Ciudad> Empresa.getCiudades() {
+        return this.ciudades;
     }
     
-    public void Empresa.setNum_empleados(Float num_empleados) {
-        this.num_empleados = num_empleados;
+    public void Empresa.setCiudades(Set<Ciudad> ciudades) {
+        this.ciudades = ciudades;
     }
     
-    public String Empresa.getTelefono() {
-        return this.telefono;
-    }
-    
-    public void Empresa.setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-    
-    public Usuario Empresa.getUsuario() {
+    public Users Empresa.getUsuario() {
         return this.usuario;
     }
     
-    public void Empresa.setUsuario(Usuario usuario) {
+    public void Empresa.setUsuario(Users usuario) {
         this.usuario = usuario;
     }
     
-    public Direccion Empresa.getDireccion() {
-        return this.direccion;
+    public Set<OfertaTrabajo> Empresa.getOfertas() {
+        return this.ofertas;
     }
     
-    public void Empresa.setDireccion(Direccion direccion) {
-        this.direccion = direccion;
-    }
-    
-    public OfertaTrabajo Empresa.getOferta() {
-        return this.oferta;
-    }
-    
-    public void Empresa.setOferta(OfertaTrabajo oferta) {
-        this.oferta = oferta;
+    public void Empresa.setOfertas(Set<OfertaTrabajo> ofertas) {
+        this.ofertas = ofertas;
     }
     
 }

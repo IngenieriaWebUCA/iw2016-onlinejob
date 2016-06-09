@@ -13,4 +13,10 @@
 <definition extends="default" name="perfils/update">
         <put-attribute name="body" value="/WEB-INF/views/perfils/update.jspx"/>
     </definition>
+<definition extends="default" name="perfils/findPerfilsByTitulos">
+        <put-attribute name="body" value="/WEB-INF/views/perfils/findPerfilsByTitulos.jspx"/>
+    </definition>
+<definition extends="default" name="perfils/findPerfilsByTrabajos">
+        <put-attribute name="body" value="/WEB-INF/views/perfils/findPerfilsByTrabajos.jspx"/>
+    </definition>
 </tiles-definitions>

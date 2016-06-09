@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Version;
 
 privileged aspect OfertaTrabajo_Roo_Jpa_Entity {
@@ -16,7 +17,8 @@ privileged aspect OfertaTrabajo_Roo_Jpa_Entity {
     declare @type: OfertaTrabajo: @Entity;
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "ofertaTrabajoGen", sequenceName = "OFE_SEQ")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "ofertaTrabajoGen")
     @Column(name = "id")
     private Long OfertaTrabajo.id;
     

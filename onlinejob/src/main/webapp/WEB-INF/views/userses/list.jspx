@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_es_uca_iw_onlinejob_domain_Users" items="${userses}" z="cDg9MQSkFf4Z464u1a7Cowsg1ZY=">
+        <table:table data="${userses}" id="l_es_uca_iw_onlinejob_domain_Users" path="/userses" z="8KOyIppV4kj/24Pusu9RsY5/TEA=">
+            <table:column id="c_es_uca_iw_onlinejob_domain_Users_activado" property="activado" z="SxG09uWy3LtdWpzcyeog5GVBGhI="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Users_apellidos" property="apellidos" z="3RXdRDFOM0+1jlge0Q2/YYA67Js="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Users_dni" property="dni" z="MtZS7IPWzXH0cvgcZEuC5U3kgUs="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Users_email" property="email" z="FC8M0htpE4/upwh4HOmnWFcM0hY="/>
+            <table:column date="true" dateTimePattern="${users_fecha_registro_date_format}" id="c_es_uca_iw_onlinejob_domain_Users_fecha_registro" property="fecha_registro" z="Inm44yUlKAPHqcZfESy53GR3Ovc="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_Users_nombre" property="nombre" z="UiIoBSTczScJlhHYFSJlRRBSnyQ="/>
+        </table:table>
+    </page:list>
+</div>

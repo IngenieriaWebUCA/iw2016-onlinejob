@@ -4,19 +4,17 @@ import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.validation.constraints.Min;
-import javax.persistence.ManyToOne;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord
+@RooJpaActiveRecord(sequenceName = "EM_SEQ", finders = { "findEmpresasByNombreLike", "findEmpresasByActividadLike" })
 public class Empresa {
-
-    /**
-     */
-    @NotNull
-    @Size(min = 3, max = 32)
-    private String nombre;
 
     /**
      */
@@ -26,37 +24,37 @@ public class Empresa {
 
     /**
      */
-    @Size(min = 8, max = 32)
-    private String email;
-
-    /**
-     */
-    @Size(max = 256)
-    private String actividad_profesional;
-
-    /**
-     */
-    @Min(0L)
-    private Float num_empleados;
+    @NotNull
+    @Size(min = 2)
+    private String nombre;
 
     /**
      */
     @NotNull
-    @Size(min = 9)
-    private String telefono;
+    private String actividad;
 
     /**
      */
-    @ManyToOne
-    private Usuario usuario;
+    @NotNull
+    private String email;
 
     /**
      */
-    @ManyToOne
-    private Direccion direccion;
+    @NotNull
+    private String empleados;
 
     /**
      */
-    @ManyToOne
-    private OfertaTrabajo oferta;
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Ciudad> ciudades = new HashSet<Ciudad>();
+
+    /**
+     */
+    @OneToOne
+    private Users usuario;
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<OfertaTrabajo> ofertas = new HashSet<OfertaTrabajo>();
 }

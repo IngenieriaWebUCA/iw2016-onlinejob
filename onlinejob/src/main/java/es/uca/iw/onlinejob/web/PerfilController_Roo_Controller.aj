@@ -3,14 +3,13 @@
 
 package es.uca.iw.onlinejob.web;
 
-import es.uca.iw.onlinejob.domain.Demandante;
 import es.uca.iw.onlinejob.domain.Perfil;
+import es.uca.iw.onlinejob.domain.Titulo;
+import es.uca.iw.onlinejob.domain.Trabajo;
 import es.uca.iw.onlinejob.web.PerfilController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,7 +40,6 @@ privileged aspect PerfilController_Roo_Controller {
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String PerfilController.show(@PathVariable("id") Long id, Model uiModel) {
-        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("perfil", Perfil.findPerfil(id));
         uiModel.addAttribute("itemId", id);
         return "perfils/show";
@@ -58,7 +56,6 @@ privileged aspect PerfilController_Roo_Controller {
         } else {
             uiModel.addAttribute("perfils", Perfil.findAllPerfils(sortFieldName, sortOrder));
         }
-        addDateTimeFormatPatterns(uiModel);
         return "perfils/list";
     }
     
@@ -89,15 +86,10 @@ privileged aspect PerfilController_Roo_Controller {
         return "redirect:/perfils";
     }
     
-    void PerfilController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("perfil_fecha_inicio_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("perfil_fecha_fin_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-    }
-    
     void PerfilController.populateEditForm(Model uiModel, Perfil perfil) {
         uiModel.addAttribute("perfil", perfil);
-        addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("demandantes", Demandante.findAllDemandantes());
+        uiModel.addAttribute("tituloes", Titulo.findAllTituloes());
+        uiModel.addAttribute("trabajoes", Trabajo.findAllTrabajoes());
     }
     
     String PerfilController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

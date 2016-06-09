@@ -3,99 +3,35 @@
 
 package es.uca.iw.onlinejob.domain;
 
-import es.uca.iw.onlinejob.domain.Demandante;
 import es.uca.iw.onlinejob.domain.Perfil;
-import java.util.Date;
+import es.uca.iw.onlinejob.domain.Titulo;
+import es.uca.iw.onlinejob.domain.Trabajo;
 import java.util.Set;
 
 privileged aspect Perfil_Roo_JavaBean {
     
-    public String Perfil.getTrayectoria() {
-        return this.trayectoria;
+    public Set<Titulo> Perfil.getTitulos() {
+        return this.titulos;
     }
     
-    public void Perfil.setTrayectoria(String trayectoria) {
-        this.trayectoria = trayectoria;
+    public void Perfil.setTitulos(Set<Titulo> titulos) {
+        this.titulos = titulos;
     }
     
-    public String Perfil.getFoto() {
-        return this.foto;
+    public Set<Trabajo> Perfil.getTrabajos() {
+        return this.trabajos;
     }
     
-    public void Perfil.setFoto(String foto) {
-        this.foto = foto;
+    public void Perfil.setTrabajos(Set<Trabajo> trabajos) {
+        this.trabajos = trabajos;
     }
     
-    public String Perfil.getLista_puesto_trabajo() {
-        return this.lista_puesto_trabajo;
+    public String Perfil.getExperiencia() {
+        return this.experiencia;
     }
     
-    public void Perfil.setLista_puesto_trabajo(String lista_puesto_trabajo) {
-        this.lista_puesto_trabajo = lista_puesto_trabajo;
-    }
-    
-    public String Perfil.getTitulo_academico() {
-        return this.titulo_academico;
-    }
-    
-    public void Perfil.setTitulo_academico(String titulo_academico) {
-        this.titulo_academico = titulo_academico;
-    }
-    
-    public String Perfil.getCurso_especializacion() {
-        return this.curso_especializacion;
-    }
-    
-    public void Perfil.setCurso_especializacion(String curso_especializacion) {
-        this.curso_especializacion = curso_especializacion;
-    }
-    
-    public String Perfil.getIdioma() {
-        return this.idioma;
-    }
-    
-    public void Perfil.setIdioma(String idioma) {
-        this.idioma = idioma;
-    }
-    
-    public String Perfil.getNombre_empresa() {
-        return this.nombre_empresa;
-    }
-    
-    public void Perfil.setNombre_empresa(String nombre_empresa) {
-        this.nombre_empresa = nombre_empresa;
-    }
-    
-    public Date Perfil.getFecha_inicio() {
-        return this.fecha_inicio;
-    }
-    
-    public void Perfil.setFecha_inicio(Date fecha_inicio) {
-        this.fecha_inicio = fecha_inicio;
-    }
-    
-    public Date Perfil.getFecha_fin() {
-        return this.fecha_fin;
-    }
-    
-    public void Perfil.setFecha_fin(Date fecha_fin) {
-        this.fecha_fin = fecha_fin;
-    }
-    
-    public String Perfil.getPuesto_trabajo_desempenado() {
-        return this.puesto_trabajo_desempenado;
-    }
-    
-    public void Perfil.setPuesto_trabajo_desempenado(String puesto_trabajo_desempenado) {
-        this.puesto_trabajo_desempenado = puesto_trabajo_desempenado;
-    }
-    
-    public Set<Demandante> Perfil.getId_perfil() {
-        return this.id_perfil;
-    }
-    
-    public void Perfil.setId_perfil(Set<Demandante> id_perfil) {
-        this.id_perfil = id_perfil;
+    public void Perfil.setExperiencia(String experiencia) {
+        this.experiencia = experiencia;
     }
     
 }

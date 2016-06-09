@@ -3,17 +3,14 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_es_uca_iw_onlinejob_domain_OfertaTrabajo" modelAttribute="ofertaTrabajo" path="/ofertatrabajoes" render="${empty dependencies}" z="17IkuzYUO/Ee82mj28b/blHRSHM=">
-        <field:textarea field="tipologia_contrato" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_tipologia_contrato" required="true" z="koGu90jhu6gS8NsuLtG/bxb2LNc="/>
-        <field:input field="sueldo_bruto" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_sueldo_bruto" min="0" required="true" validationMessageCode="field_invalid_number" z="SppRfafdTdGPa49YqVPa2HtJX8c="/>
-        <field:datetime dateTimePattern="${ofertaTrabajo_fecha_inicio_date_format}" field="fecha_inicio" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_fecha_inicio" required="true" z="PFBYUgt0Q1NhWhgbpEy5nq+/vfI="/>
-        <field:input field="num_vacantes" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_num_vacantes" required="true" z="qIm6EVpjUelW1nTRichFhrP76hU="/>
-        <field:textarea field="perfil" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_perfil" required="true" z="JhmWJBjAwJUitYDBfteAd2skqSY="/>
-        <field:textarea field="formacion" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_formacion" required="true" z="oOB71bQ9vwrH+r9ac/XgBwx/zC4="/>
-        <field:input field="experiencia_previa" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_experiencia_previa" required="true" z="wt5A/rhwyDdJtZJ1+8w8v+Bm5KI="/>
-        <field:select field="estado_empleo" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_estado_empleo" items="${estadoempleos}" path="estadoempleos" z="xNjkO2ok0wP4pEjrVdOKxbBi22E="/>
-        <field:simple field="id_ofertaEmpresa" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_id_ofertaEmpresa" messageCode="entity_reference_not_managed" messageCodeAttribute="Empresa" z="nvQrnwZneuoGifAqjR3qKvbU9YM="/>
-        <field:select field="id_oferta_demandante" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_id_oferta_demandante" itemValue="id" items="${demandantes}" multiple="true" path="/demandantes" z="GPwDDmtaPF6w48YjoK1RzsEb/bU="/>
-        <field:input field="nombre" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_nombre" max="30" min="3" required="true" z="zPkSrhG+VTxMZjRRcyz/75rwarc="/>
+        <field:select field="nombre_puesto" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_nombre_puesto" itemValue="id" items="${trabajoes}" path="/trabajoes" required="true" z="3mOxj2XQq0SwLNzNo/qLt42xkTo="/>
+        <field:input field="salario" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_salario" z="X9GnluFQUGi+Ks5MH8BGGvltALE="/>
+        <field:select field="tipologia_contrato" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_tipologia_contrato" items="${tipocontratoes}" path="tipocontratoes" required="true" z="VXzPc26drk4jru+ECyxVkNSe51c="/>
+        <field:input field="duracion" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_duracion" z="qq0tS+0XK9RgEPHKhX/CKESPTZw="/>
+        <field:input field="vacantes" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_vacantes" required="true" z="3QKM2ZE7324B3hreG3IdbpuuhSE="/>
+        <field:select field="localizacion" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_localizacion" itemValue="id" items="${ciudads}" path="/ciudads" z="wqGQL2yRaODwDpj5SPCpNCqnxxA="/>
+        <field:simple field="inscritos" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_inscritos" messageCode="entity_reference_not_managed" messageCodeAttribute="Inscripcion" z="oeS0weJyY2f+v/EiY4BJgdaC5QQ="/>
+        <field:select field="estado" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_estado" items="${estadoofertas}" path="estadoofertas" required="true" z="4wG2Yi1e4pQNsZurXOjx3lG3+hU="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_onlinejob_domain_OfertaTrabajo" render="${not empty dependencies}" z="WKBM9/ie0Fhosut+x5dEoh+bJcM="/>
 </div>

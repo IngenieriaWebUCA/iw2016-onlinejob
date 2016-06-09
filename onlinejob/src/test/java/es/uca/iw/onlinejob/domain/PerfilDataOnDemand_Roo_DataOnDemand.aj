@@ -7,9 +7,6 @@ import es.uca.iw.onlinejob.domain.Perfil;
 import es.uca.iw.onlinejob.domain.PerfilDataOnDemand;
 import java.security.SecureRandom;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -27,88 +24,16 @@ privileged aspect PerfilDataOnDemand_Roo_DataOnDemand {
     
     public Perfil PerfilDataOnDemand.getNewTransientPerfil(int index) {
         Perfil obj = new Perfil();
-        setCurso_especializacion(obj, index);
-        setFecha_fin(obj, index);
-        setFecha_inicio(obj, index);
-        setFoto(obj, index);
-        setIdioma(obj, index);
-        setLista_puesto_trabajo(obj, index);
-        setNombre_empresa(obj, index);
-        setPuesto_trabajo_desempenado(obj, index);
-        setTitulo_academico(obj, index);
-        setTrayectoria(obj, index);
+        setExperiencia(obj, index);
         return obj;
     }
     
-    public void PerfilDataOnDemand.setCurso_especializacion(Perfil obj, int index) {
-        String curso_especializacion = "curso_especializacion_" + index;
-        if (curso_especializacion.length() > 32) {
-            curso_especializacion = curso_especializacion.substring(0, 32);
+    public void PerfilDataOnDemand.setExperiencia(Perfil obj, int index) {
+        String experiencia = "experiencia_" + index;
+        if (experiencia.length() > 256) {
+            experiencia = experiencia.substring(0, 256);
         }
-        obj.setCurso_especializacion(curso_especializacion);
-    }
-    
-    public void PerfilDataOnDemand.setFecha_fin(Perfil obj, int index) {
-        Date fecha_fin = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
-        obj.setFecha_fin(fecha_fin);
-    }
-    
-    public void PerfilDataOnDemand.setFecha_inicio(Perfil obj, int index) {
-        Date fecha_inicio = new Date(new Date().getTime() - 10000000L);
-        obj.setFecha_inicio(fecha_inicio);
-    }
-    
-    public void PerfilDataOnDemand.setFoto(Perfil obj, int index) {
-        String foto = "foto_" + index;
-        obj.setFoto(foto);
-    }
-    
-    public void PerfilDataOnDemand.setIdioma(Perfil obj, int index) {
-        String idioma = "idioma_" + index;
-        if (idioma.length() > 32) {
-            idioma = idioma.substring(0, 32);
-        }
-        obj.setIdioma(idioma);
-    }
-    
-    public void PerfilDataOnDemand.setLista_puesto_trabajo(Perfil obj, int index) {
-        String lista_puesto_trabajo = "lista_puesto_trabajo_" + index;
-        if (lista_puesto_trabajo.length() > 32) {
-            lista_puesto_trabajo = lista_puesto_trabajo.substring(0, 32);
-        }
-        obj.setLista_puesto_trabajo(lista_puesto_trabajo);
-    }
-    
-    public void PerfilDataOnDemand.setNombre_empresa(Perfil obj, int index) {
-        String nombre_empresa = "nombre_empresa_" + index;
-        if (nombre_empresa.length() > 32) {
-            nombre_empresa = nombre_empresa.substring(0, 32);
-        }
-        obj.setNombre_empresa(nombre_empresa);
-    }
-    
-    public void PerfilDataOnDemand.setPuesto_trabajo_desempenado(Perfil obj, int index) {
-        String puesto_trabajo_desempenado = "puesto_trabajo_desempenado_" + index;
-        if (puesto_trabajo_desempenado.length() > 32) {
-            puesto_trabajo_desempenado = puesto_trabajo_desempenado.substring(0, 32);
-        }
-        obj.setPuesto_trabajo_desempenado(puesto_trabajo_desempenado);
-    }
-    
-    public void PerfilDataOnDemand.setTitulo_academico(Perfil obj, int index) {
-        String titulo_academico = "titulo_academico_" + index;
-        if (titulo_academico.length() > 32) {
-            titulo_academico = titulo_academico.substring(0, 32);
-        }
-        obj.setTitulo_academico(titulo_academico);
-    }
-    
-    public void PerfilDataOnDemand.setTrayectoria(Perfil obj, int index) {
-        String trayectoria = "trayectoria_" + index;
-        if (trayectoria.length() > 256) {
-            trayectoria = trayectoria.substring(0, 256);
-        }
-        obj.setTrayectoria(trayectoria);
+        obj.setExperiencia(experiencia);
     }
     
     public Perfil PerfilDataOnDemand.getSpecificPerfil(int index) {

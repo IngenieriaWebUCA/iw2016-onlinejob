@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_es_uca_iw_onlinejob_domain_Inscripcion" object="${inscripcion}" path="/inscripcions" z="90w7sHxE8480OK6P6QJIp4P648Y=">
+        <field:display field="demandante" id="s_es_uca_iw_onlinejob_domain_Inscripcion_demandante" object="${inscripcion}" z="lKvoIvc7ZTzZElqVs5zuQ2ia4ug="/>
+        <field:display field="oferta" id="s_es_uca_iw_onlinejob_domain_Inscripcion_oferta" object="${inscripcion}" z="q0wCAPy/uuQsssyctCVChI2SEBs="/>
+        <field:display field="estado_inscripcion" id="s_es_uca_iw_onlinejob_domain_Inscripcion_estado_inscripcion" object="${inscripcion}" z="jpi9PSm8t59n49fRqJ5fMNTHHP4="/>
+        <field:display date="true" dateTimePattern="${inscripcion_fecha_inscripcion_date_format}" field="fecha_inscripcion" id="s_es_uca_iw_onlinejob_domain_Inscripcion_fecha_inscripcion" object="${inscripcion}" z="0gQ8AGJL96Is4O8FlaiOYp7AC0s="/>
+        <field:display field="estado" id="s_es_uca_iw_onlinejob_domain_Inscripcion_estado" object="${inscripcion}" z="rwnx7u7h7ncglWPlcCNllhtx/cs="/>
+    </page:show>
+</div>

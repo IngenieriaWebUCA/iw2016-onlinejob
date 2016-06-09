@@ -2,81 +2,30 @@ package es.uca.iw.onlinejob.domain;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.util.Date;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.Past;
-import org.springframework.format.annotation.DateTimeFormat;
-import es.uca.iw.onlinejob.reference.EstadoOferta;
-import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord
+@RooJpaActiveRecord(sequenceName = "DE_SEQ")
 public class Demandante {
 
     /**
      */
-    @NotNull
-    @Size(min = 3)
-    private String dni;
-
-    /**
-     */
-    @NotNull
-    @Size(min = 3, max = 32)
-    private String nombre;
-
-    /**
-     */
-    @NotNull
-    @Past
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    private Date fecha_nacimiento;
-
-    /**
-     */
-    @NotNull
-    private String sexo;
-
-    /**
-     */
-    @NotNull
-    private String direccion;
-
-    /**
-     */
-    @NotNull
-    @Size(min = 3, max = 32)
-    private String email;
-
-    /**
-     */
-    @NotNull
-    private String telefono;
-
-    /**
-     */
-    @Enumerated
-    private EstadoOferta estado;
-
-    /**
-     */
     @ManyToOne
-    private OfertaTrabajo ofertademandante;
+    private Demandante perfil;
 
     /**
      */
-    @ManyToOne
-    private Perfil perfil;
+    @OneToOne
+    private Users usuario;
 
     /**
      */
-    @ManyToOne
-    private Usuario usuario;
-
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "demandante")
+    private Set<Inscripcion> inscripciones = new HashSet<Inscripcion>();
 }

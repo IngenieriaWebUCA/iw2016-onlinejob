@@ -3,14 +3,12 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_es_uca_iw_onlinejob_domain_Empresa" object="${empresa}" path="/empresas" z="mv1X+Q81X+FsRb58Dvz85UbAYWE=">
-        <field:display field="nombre" id="s_es_uca_iw_onlinejob_domain_Empresa_nombre" object="${empresa}" z="qKHyJIy4k8r3ymtApaAZEcBFRDI="/>
         <field:display field="cif" id="s_es_uca_iw_onlinejob_domain_Empresa_cif" object="${empresa}" z="7476CDT2L/d79vHQv43yaVr58vQ="/>
+        <field:display field="nombre" id="s_es_uca_iw_onlinejob_domain_Empresa_nombre" object="${empresa}" z="qKHyJIy4k8r3ymtApaAZEcBFRDI="/>
+        <field:display field="actividad" id="s_es_uca_iw_onlinejob_domain_Empresa_actividad" object="${empresa}" z="pK2ggAjBoUXKnp3Ly8GTXmDv7V0="/>
         <field:display field="email" id="s_es_uca_iw_onlinejob_domain_Empresa_email" object="${empresa}" z="NwVsLcFnRzm97/m9K1WunUxXGu4="/>
-        <field:display field="actividad_profesional" id="s_es_uca_iw_onlinejob_domain_Empresa_actividad_profesional" object="${empresa}" z="Lo8PxPW6Mtbqt/B8XbgGoDYqqec="/>
-        <field:display field="num_empleados" id="s_es_uca_iw_onlinejob_domain_Empresa_num_empleados" object="${empresa}" z="HNApSNQCHpIeGrlkeCpt2DtU9Xk="/>
-        <field:display field="telefono" id="s_es_uca_iw_onlinejob_domain_Empresa_telefono" object="${empresa}" z="mAcyeJ1fAZ0PoqhOvIRL+k0nKR8="/>
+        <field:display field="empleados" id="s_es_uca_iw_onlinejob_domain_Empresa_empleados" object="${empresa}" z="ycfxMsUTM1rV+3pngA/LazOygKo="/>
+        <field:display field="ciudades" id="s_es_uca_iw_onlinejob_domain_Empresa_ciudades" object="${empresa}" z="bQxZsw94+rcl2dBdb20g10/NKH4="/>
         <field:display field="usuario" id="s_es_uca_iw_onlinejob_domain_Empresa_usuario" object="${empresa}" z="VZwR/iC/zvzh7kF2TJBy3jfQldg="/>
-        <field:display field="direccion" id="s_es_uca_iw_onlinejob_domain_Empresa_direccion" object="${empresa}" z="T04qRyf/ZYsukr4QgaQDNHcKcY4="/>
-        <field:display field="oferta" id="s_es_uca_iw_onlinejob_domain_Empresa_oferta" object="${empresa}" z="cTeVx7t7kh1UIaT6E4GhlCa0BVE="/>
     </page:show>
 </div>

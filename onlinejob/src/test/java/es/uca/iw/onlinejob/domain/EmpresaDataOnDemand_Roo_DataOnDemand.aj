@@ -3,11 +3,9 @@
 
 package es.uca.iw.onlinejob.domain;
 
-import es.uca.iw.onlinejob.domain.DireccionDataOnDemand;
 import es.uca.iw.onlinejob.domain.Empresa;
 import es.uca.iw.onlinejob.domain.EmpresaDataOnDemand;
-import es.uca.iw.onlinejob.domain.OfertaTrabajoDataOnDemand;
-import es.uca.iw.onlinejob.domain.UsuarioDataOnDemand;
+import es.uca.iw.onlinejob.domain.UsersDataOnDemand;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -27,31 +25,21 @@ privileged aspect EmpresaDataOnDemand_Roo_DataOnDemand {
     private List<Empresa> EmpresaDataOnDemand.data;
     
     @Autowired
-    DireccionDataOnDemand EmpresaDataOnDemand.direccionDataOnDemand;
-    
-    @Autowired
-    OfertaTrabajoDataOnDemand EmpresaDataOnDemand.ofertaTrabajoDataOnDemand;
-    
-    @Autowired
-    UsuarioDataOnDemand EmpresaDataOnDemand.usuarioDataOnDemand;
+    UsersDataOnDemand EmpresaDataOnDemand.usersDataOnDemand;
     
     public Empresa EmpresaDataOnDemand.getNewTransientEmpresa(int index) {
         Empresa obj = new Empresa();
-        setActividad_profesional(obj, index);
+        setActividad(obj, index);
         setCif(obj, index);
         setEmail(obj, index);
+        setEmpleados(obj, index);
         setNombre(obj, index);
-        setNum_empleados(obj, index);
-        setTelefono(obj, index);
         return obj;
     }
     
-    public void EmpresaDataOnDemand.setActividad_profesional(Empresa obj, int index) {
-        String actividad_profesional = "actividad_profesional_" + index;
-        if (actividad_profesional.length() > 256) {
-            actividad_profesional = actividad_profesional.substring(0, 256);
-        }
-        obj.setActividad_profesional(actividad_profesional);
+    public void EmpresaDataOnDemand.setActividad(Empresa obj, int index) {
+        String actividad = "actividad_" + index;
+        obj.setActividad(actividad);
     }
     
     public void EmpresaDataOnDemand.setCif(Empresa obj, int index) {
@@ -64,28 +52,17 @@ privileged aspect EmpresaDataOnDemand_Roo_DataOnDemand {
     
     public void EmpresaDataOnDemand.setEmail(Empresa obj, int index) {
         String email = "foo" + index + "@bar.com";
-        if (email.length() > 32) {
-            email = email.substring(0, 32);
-        }
         obj.setEmail(email);
+    }
+    
+    public void EmpresaDataOnDemand.setEmpleados(Empresa obj, int index) {
+        String empleados = "empleados_" + index;
+        obj.setEmpleados(empleados);
     }
     
     public void EmpresaDataOnDemand.setNombre(Empresa obj, int index) {
         String nombre = "nombre_" + index;
-        if (nombre.length() > 32) {
-            nombre = nombre.substring(0, 32);
-        }
         obj.setNombre(nombre);
-    }
-    
-    public void EmpresaDataOnDemand.setNum_empleados(Empresa obj, int index) {
-        Float num_empleados = new Integer(index).floatValue();
-        obj.setNum_empleados(num_empleados);
-    }
-    
-    public void EmpresaDataOnDemand.setTelefono(Empresa obj, int index) {
-        String telefono = "telefono_" + index;
-        obj.setTelefono(telefono);
     }
     
     public Empresa EmpresaDataOnDemand.getSpecificEmpresa(int index) {

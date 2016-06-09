@@ -5,13 +5,9 @@ package es.uca.iw.onlinejob.domain;
 
 import es.uca.iw.onlinejob.domain.Demandante;
 import es.uca.iw.onlinejob.domain.DemandanteDataOnDemand;
-import es.uca.iw.onlinejob.domain.OfertaTrabajoDataOnDemand;
-import es.uca.iw.onlinejob.domain.PerfilDataOnDemand;
-import es.uca.iw.onlinejob.domain.UsuarioDataOnDemand;
-import es.uca.iw.onlinejob.reference.EstadoOferta;
+import es.uca.iw.onlinejob.domain.UsersDataOnDemand;
 import java.security.SecureRandom;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -29,71 +25,17 @@ privileged aspect DemandanteDataOnDemand_Roo_DataOnDemand {
     private List<Demandante> DemandanteDataOnDemand.data;
     
     @Autowired
-    OfertaTrabajoDataOnDemand DemandanteDataOnDemand.ofertaTrabajoDataOnDemand;
-    
-    @Autowired
-    PerfilDataOnDemand DemandanteDataOnDemand.perfilDataOnDemand;
-    
-    @Autowired
-    UsuarioDataOnDemand DemandanteDataOnDemand.usuarioDataOnDemand;
+    UsersDataOnDemand DemandanteDataOnDemand.usersDataOnDemand;
     
     public Demandante DemandanteDataOnDemand.getNewTransientDemandante(int index) {
         Demandante obj = new Demandante();
-        setDireccion(obj, index);
-        setDni(obj, index);
-        setEmail(obj, index);
-        setEstado(obj, index);
-        setFecha_nacimiento(obj, index);
-        setNombre(obj, index);
-        setSexo(obj, index);
-        setTelefono(obj, index);
+        setPerfil(obj, index);
         return obj;
     }
     
-    public void DemandanteDataOnDemand.setDireccion(Demandante obj, int index) {
-        String direccion = "direccion_" + index;
-        obj.setDireccion(direccion);
-    }
-    
-    public void DemandanteDataOnDemand.setDni(Demandante obj, int index) {
-        String dni = "dni_" + index;
-        obj.setDni(dni);
-    }
-    
-    public void DemandanteDataOnDemand.setEmail(Demandante obj, int index) {
-        String email = "foo" + index + "@bar.com";
-        if (email.length() > 32) {
-            email = email.substring(0, 32);
-        }
-        obj.setEmail(email);
-    }
-    
-    public void DemandanteDataOnDemand.setEstado(Demandante obj, int index) {
-        EstadoOferta estado = EstadoOferta.class.getEnumConstants()[0];
-        obj.setEstado(estado);
-    }
-    
-    public void DemandanteDataOnDemand.setFecha_nacimiento(Demandante obj, int index) {
-        Date fecha_nacimiento = new Date(new Date().getTime() - 10000000L);
-        obj.setFecha_nacimiento(fecha_nacimiento);
-    }
-    
-    public void DemandanteDataOnDemand.setNombre(Demandante obj, int index) {
-        String nombre = "nombre_" + index;
-        if (nombre.length() > 32) {
-            nombre = nombre.substring(0, 32);
-        }
-        obj.setNombre(nombre);
-    }
-    
-    public void DemandanteDataOnDemand.setSexo(Demandante obj, int index) {
-        String sexo = "sexo_" + index;
-        obj.setSexo(sexo);
-    }
-    
-    public void DemandanteDataOnDemand.setTelefono(Demandante obj, int index) {
-        String telefono = "telefono_" + index;
-        obj.setTelefono(telefono);
+    public void DemandanteDataOnDemand.setPerfil(Demandante obj, int index) {
+        Demandante perfil = obj;
+        obj.setPerfil(perfil);
     }
     
     public Demandante DemandanteDataOnDemand.getSpecificDemandante(int index) {

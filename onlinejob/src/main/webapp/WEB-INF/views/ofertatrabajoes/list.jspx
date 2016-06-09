@@ -4,12 +4,12 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_onlinejob_domain_OfertaTrabajo" items="${ofertatrabajoes}" z="7c/Dt4pgB3k/Vfz60iId20Pw3X0=">
         <table:table data="${ofertatrabajoes}" id="l_es_uca_iw_onlinejob_domain_OfertaTrabajo" path="/ofertatrabajoes" z="lWy6kdC/bcJRpy8O481Bwz7clp8=">
+            <table:column id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_nombre_puesto" property="nombre_puesto" z="BWsyQcQjJtoG76LUGsQ0UiVo7rQ="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_salario" property="salario" z="Ak2ZOwpivZcODer+71g0r9BnHX0="/>
             <table:column id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_tipologia_contrato" property="tipologia_contrato" z="GQQ4SBG/3sBT9c1pDxwx1XMJF08="/>
-            <table:column id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_sueldo_bruto" property="sueldo_bruto" z="oJkBkZowKEQc/15pGB06I3cYUCg="/>
-            <table:column date="true" dateTimePattern="${ofertaTrabajo_fecha_inicio_date_format}" id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_fecha_inicio" property="fecha_inicio" z="XWU3pcefXqqFY5G8meXx2ZYoGWc="/>
-            <table:column id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_num_vacantes" property="num_vacantes" z="sj3bukPyEFE83GbxC+xTq2gAkdo="/>
-            <table:column id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_perfil" property="perfil" z="mAAdTWipFl2MO11m5WzaAu6qN9o="/>
-            <table:column id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_formacion" property="formacion" z="+utgOKBcC4vTD9jWvAWWfueCUsw="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_duracion" property="duracion" z="ifyOsOsG2pK2EInfzv2NZCzjBuQ="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_vacantes" property="vacantes" z="PDTLn9k4xPbUES93YHFMODmpLMY="/>
+            <table:column id="c_es_uca_iw_onlinejob_domain_OfertaTrabajo_localizacion" property="localizacion" z="wJwZDGcN5VdI+Ja9DsUiUm+q2Gk="/>
         </table:table>
     </page:list>
 </div>

@@ -3,15 +3,8 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_es_uca_iw_onlinejob_domain_Perfil" object="${perfil}" path="/perfils" z="wTtff+JXGfk5awt9zxIfwKKIgFo=">
-        <field:display field="trayectoria" id="s_es_uca_iw_onlinejob_domain_Perfil_trayectoria" object="${perfil}" z="Vop0ACApEr+18bTXI5DSVkXAaks="/>
-        <field:display field="foto" id="s_es_uca_iw_onlinejob_domain_Perfil_foto" object="${perfil}" z="2/jz5wqMyfu2bRjdSNYuB8xXq5k="/>
-        <field:display field="lista_puesto_trabajo" id="s_es_uca_iw_onlinejob_domain_Perfil_lista_puesto_trabajo" object="${perfil}" z="scclo5ewOdLar7I8I6rmXJ60OTE="/>
-        <field:display field="titulo_academico" id="s_es_uca_iw_onlinejob_domain_Perfil_titulo_academico" object="${perfil}" z="3sury89dd+75MtVpqdyngNhLljY="/>
-        <field:display field="curso_especializacion" id="s_es_uca_iw_onlinejob_domain_Perfil_curso_especializacion" object="${perfil}" z="5U41WUqTLWmI7XeulduYHlj3KZ8="/>
-        <field:display field="idioma" id="s_es_uca_iw_onlinejob_domain_Perfil_idioma" object="${perfil}" z="UEYi0mIOHON8HS+l0tIifwkMu1k="/>
-        <field:display field="nombre_empresa" id="s_es_uca_iw_onlinejob_domain_Perfil_nombre_empresa" object="${perfil}" z="F94R81Yl/ZkSpxrHdLbOsLSMzn4="/>
-        <field:display date="true" dateTimePattern="${perfil_fecha_inicio_date_format}" field="fecha_inicio" id="s_es_uca_iw_onlinejob_domain_Perfil_fecha_inicio" object="${perfil}" z="naMCCNSdfYFrkaDlYDnCXSkG0o8="/>
-        <field:display date="true" dateTimePattern="${perfil_fecha_fin_date_format}" field="fecha_fin" id="s_es_uca_iw_onlinejob_domain_Perfil_fecha_fin" object="${perfil}" z="FMnWH3orcadoEuZG9tbiQv/q604="/>
-        <field:display field="puesto_trabajo_desempenado" id="s_es_uca_iw_onlinejob_domain_Perfil_puesto_trabajo_desempenado" object="${perfil}" z="DGVLqTDuwXK9L9h1x+Ia7g1ET/g="/>
+        <field:display field="titulos" id="s_es_uca_iw_onlinejob_domain_Perfil_titulos" object="${perfil}" z="4lpnUSTWux4gfWSgMBhpuAt5SbI="/>
+        <field:display field="trabajos" id="s_es_uca_iw_onlinejob_domain_Perfil_trabajos" object="${perfil}" z="HSood3A8cL3orR5oDWlIgQTD1OQ="/>
+        <field:display field="experiencia" id="s_es_uca_iw_onlinejob_domain_Perfil_experiencia" object="${perfil}" z="V6L1A04ABnFv8F7CHMaD+MJNiYc="/>
     </page:show>
 </div>

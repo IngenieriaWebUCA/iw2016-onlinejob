@@ -13,4 +13,16 @@
 <definition extends="default" name="ofertatrabajoes/update">
         <put-attribute name="body" value="/WEB-INF/views/ofertatrabajoes/update.jspx"/>
     </definition>
+<definition extends="default" name="ofertatrabajoes/findOfertaTrabajoesByInscritos">
+        <put-attribute name="body" value="/WEB-INF/views/ofertatrabajoes/findOfertaTrabajoesByInscritos.jspx"/>
+    </definition>
+<definition extends="default" name="ofertatrabajoes/findOfertaTrabajoesByLocalizacion">
+        <put-attribute name="body" value="/WEB-INF/views/ofertatrabajoes/findOfertaTrabajoesByLocalizacion.jspx"/>
+    </definition>
+<definition extends="default" name="ofertatrabajoes/findOfertaTrabajoesByNombre_puesto">
+        <put-attribute name="body" value="/WEB-INF/views/ofertatrabajoes/findOfertaTrabajoesByNombre_puesto.jspx"/>
+    </definition>
+<definition extends="default" name="ofertatrabajoes/findOfertaTrabajoesBySalario">
+        <put-attribute name="body" value="/WEB-INF/views/ofertatrabajoes/findOfertaTrabajoesBySalario.jspx"/>
+    </definition>
 </tiles-definitions>

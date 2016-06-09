@@ -4,100 +4,34 @@
 package es.uca.iw.onlinejob.domain;
 
 import es.uca.iw.onlinejob.domain.Demandante;
-import es.uca.iw.onlinejob.domain.OfertaTrabajo;
-import es.uca.iw.onlinejob.domain.Perfil;
-import es.uca.iw.onlinejob.domain.Usuario;
-import es.uca.iw.onlinejob.reference.EstadoOferta;
-import java.util.Date;
+import es.uca.iw.onlinejob.domain.Inscripcion;
+import es.uca.iw.onlinejob.domain.Users;
+import java.util.Set;
 
 privileged aspect Demandante_Roo_JavaBean {
     
-    public String Demandante.getDni() {
-        return this.dni;
-    }
-    
-    public void Demandante.setDni(String dni) {
-        this.dni = dni;
-    }
-    
-    public String Demandante.getNombre() {
-        return this.nombre;
-    }
-    
-    public void Demandante.setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    
-    public Date Demandante.getFecha_nacimiento() {
-        return this.fecha_nacimiento;
-    }
-    
-    public void Demandante.setFecha_nacimiento(Date fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
-    }
-    
-    public String Demandante.getSexo() {
-        return this.sexo;
-    }
-    
-    public void Demandante.setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-    
-    public String Demandante.getDireccion() {
-        return this.direccion;
-    }
-    
-    public void Demandante.setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-    
-    public String Demandante.getEmail() {
-        return this.email;
-    }
-    
-    public void Demandante.setEmail(String email) {
-        this.email = email;
-    }
-    
-    public String Demandante.getTelefono() {
-        return this.telefono;
-    }
-    
-    public void Demandante.setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-    
-    public EstadoOferta Demandante.getEstado() {
-        return this.estado;
-    }
-    
-    public void Demandante.setEstado(EstadoOferta estado) {
-        this.estado = estado;
-    }
-    
-    public OfertaTrabajo Demandante.getOfertademandante() {
-        return this.ofertademandante;
-    }
-    
-    public void Demandante.setOfertademandante(OfertaTrabajo ofertademandante) {
-        this.ofertademandante = ofertademandante;
-    }
-    
-    public Perfil Demandante.getPerfil() {
+    public Demandante Demandante.getPerfil() {
         return this.perfil;
     }
     
-    public void Demandante.setPerfil(Perfil perfil) {
+    public void Demandante.setPerfil(Demandante perfil) {
         this.perfil = perfil;
     }
     
-    public Usuario Demandante.getUsuario() {
+    public Users Demandante.getUsuario() {
         return this.usuario;
     }
     
-    public void Demandante.setUsuario(Usuario usuario) {
+    public void Demandante.setUsuario(Users usuario) {
         this.usuario = usuario;
+    }
+    
+    public Set<Inscripcion> Demandante.getInscripciones() {
+        return this.inscripciones;
+    }
+    
+    public void Demandante.setInscripciones(Set<Inscripcion> inscripciones) {
+        this.inscripciones = inscripciones;
     }
     
 }

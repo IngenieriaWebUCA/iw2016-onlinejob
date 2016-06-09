@@ -3,16 +3,8 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_es_uca_iw_onlinejob_domain_Demandante" modelAttribute="demandante" path="/demandantes" versionField="Version" z="J9MIpLU+wnNW3g6B5HdBEzrqQt8=">
-        <field:input field="dni" id="c_es_uca_iw_onlinejob_domain_Demandante_dni" min="3" required="true" z="XNi8n10B0I7lmi/7G7zSfzVh8Vk="/>
-        <field:textarea field="nombre" id="c_es_uca_iw_onlinejob_domain_Demandante_nombre" required="true" z="EEbbzVCVad/iZcpG2Q9eZ9VYCMg="/>
-        <field:datetime dateTimePattern="${demandante_fecha_nacimiento_date_format}" field="fecha_nacimiento" id="c_es_uca_iw_onlinejob_domain_Demandante_fecha_nacimiento" past="true" required="true" z="nWU7IlHwJMwZW0YIMC0kxAjLYR0="/>
-        <field:input field="sexo" id="c_es_uca_iw_onlinejob_domain_Demandante_sexo" required="true" z="s9cwsnUSOkvSCqIbbeNOAKBfPDg="/>
-        <field:input field="direccion" id="c_es_uca_iw_onlinejob_domain_Demandante_direccion" required="true" z="VG4FX7gMTLC2F6QiGxsWEtgofmc="/>
-        <field:textarea field="email" id="c_es_uca_iw_onlinejob_domain_Demandante_email" required="true" validationMessageCode="field_invalid_email" z="x94em2chYCTOkJ8J3KQ9c5LQFiU="/>
-        <field:input field="telefono" id="c_es_uca_iw_onlinejob_domain_Demandante_telefono" required="true" z="ostl1qHdRUJOPpZuPq9zsSCp0G8="/>
-        <field:select field="estado" id="c_es_uca_iw_onlinejob_domain_Demandante_estado" items="${estadoofertas}" path="estadoofertas" z="4Hpp16CgBX0/lUVjEuEY73NBsiU="/>
-        <field:select field="ofertademandante" id="c_es_uca_iw_onlinejob_domain_Demandante_ofertademandante" itemValue="id" items="${ofertatrabajoes}" path="/ofertatrabajoes" z="8MuyvdCYtmK+buVOFqVLtdEhq1E="/>
-        <field:select field="perfil" id="c_es_uca_iw_onlinejob_domain_Demandante_perfil" itemValue="id" items="${perfils}" path="/perfils" z="ccjPNUikyG3dKzRC5dVX5WCcTCE="/>
-        <field:select field="usuario" id="c_es_uca_iw_onlinejob_domain_Demandante_usuario" itemValue="id" items="${usuarios}" path="/usuarios" z="WIjj0eGb2k2388eDqJUxWmiMGHY="/>
+        <field:select field="perfil" id="c_es_uca_iw_onlinejob_domain_Demandante_perfil" itemValue="id" items="${demandantes}" path="/demandantes" z="NE77p/OkzubvcIO8cofh2EY2SI0="/>
+        <field:select field="usuario" id="c_es_uca_iw_onlinejob_domain_Demandante_usuario" itemValue="id" items="${userses}" path="/userses" z="WTkLldMVGqzRhD8KMW9RGw78FKI="/>
+        <field:simple field="inscripciones" id="c_es_uca_iw_onlinejob_domain_Demandante_inscripciones" messageCode="entity_reference_not_managed" messageCodeAttribute="Inscripcion" z="ByLC5Ywp1SyXRPm0BHO4eo/HbTI="/>
     </form:update>
 </div>

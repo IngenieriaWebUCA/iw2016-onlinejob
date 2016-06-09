@@ -3,10 +3,10 @@
 
 package es.uca.iw.onlinejob.web;
 
-import es.uca.iw.onlinejob.domain.Direccion;
+import es.uca.iw.onlinejob.domain.Ciudad;
 import es.uca.iw.onlinejob.domain.Empresa;
 import es.uca.iw.onlinejob.domain.OfertaTrabajo;
-import es.uca.iw.onlinejob.domain.Usuario;
+import es.uca.iw.onlinejob.domain.Users;
 import es.uca.iw.onlinejob.web.EmpresaController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -89,9 +89,9 @@ privileged aspect EmpresaController_Roo_Controller {
     
     void EmpresaController.populateEditForm(Model uiModel, Empresa empresa) {
         uiModel.addAttribute("empresa", empresa);
-        uiModel.addAttribute("direccions", Direccion.findAllDireccions());
+        uiModel.addAttribute("ciudads", Ciudad.findAllCiudads());
         uiModel.addAttribute("ofertatrabajoes", OfertaTrabajo.findAllOfertaTrabajoes());
-        uiModel.addAttribute("usuarios", Usuario.findAllUsuarios());
+        uiModel.addAttribute("userses", Users.findAllUserses());
     }
     
     String EmpresaController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
