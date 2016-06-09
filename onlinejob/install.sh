@@ -1,14 +1,14 @@
-#! /bin/bash
-echo "Introduzca usuario MySQL:"
-read user
-echo -n "[MySQL] Introduzca la contraseña de $user de MySQL: "
-read CLAVE
-echo -n "Creando base de datos..."
-if mysql -u root --password="$CLAVE" < onlinejob.sql; then
-   echo "*** Base de datos creada ***"
-else
-   echo "Se ha producido un error al crear la base de datos"
-fi
-echo "Realizando el despliegue de la aplicación"
-mvn clean compile tomcat7:run
+#!bin/sh
+echo 
+echo "**********    Script instalacion Ucajobs **********"
+echo 
+read -p "Introduzca usuario Mysql: " USER
+read -p "Introduzca password Mysql: " PASS
 
+mysql --user="$USER" --password="$PASS" < onlinejob.sql
+
+echo "Puede acceder a la aplicación una vez termine de desplegarse en el servidor, mediante la URL:"
+echo "- http://localhost:8080/onlinejob/"
+read -p "Pulse una tecla para comenzar..."
+
+mvn clean compile tomcat7:run 
